@@ -70,7 +70,55 @@ $.get(isModURL, function(content) {
 				});
 			});
 		}
-		
+		$( "body" ).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+			var mThis = this;
+			if($(this).text().trim() == "Antworten") {
+				$().ready(function() {
+					setTimeout(writeSite, 1500);
+				});
+			} else if($(this).text().trim() == "Antworten mit Zitat") {
+				$().ready(function() {
+					setTimeout(function() {
+						writeSite();
+					}, 1500);
+				});
+			} 
+		});
+		$( "body" ).delegate( "a.schreib", "click", function() {
+			var text = $(".forumEditorContent").val();
+			text += decodeURIComponent($(this).data("text"));
+			if(text.indexOf("%te%") >= 0) {
+				if(window.location.href.indexOf("/page/") >= 0) {
+					var lage = window.location.href.length;
+					var newPage = window.location.href.substr(0,lage-1)+1;
+					var pages = window.location.href.split("/")
+					newPage = pages[0]+pages[1]+"//"+pages[2]+"/"+pages[3]+"/"+pages[4]+"/"+pages[5]+"/page/1";
+					$.get(newPage, function(content) {
+						var first = $(content).find(".isThreadAuthor").first();
+						var nameTE = ($(first).find("a.threadPostAuthorNameLink").text().trim());
+						$(".forumEditorContent").val(text.replace('%te%' ,nameTE));
+					});
+				} else {
+					var first = $(".isThreadAuthor").first();
+					var nameTE = ($(first).find("a.threadPostAuthorNameLink").first().text().trim());
+					$(".forumEditorContent").val(text.replace('%te%' ,nameTE));
+				}
+			} else if(text.indexOf("%Name%") >= 0) {
+				var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
+				$(".forumEditorContent").val(text.replace('%Name%' ,name));
+			} else {
+				$(".forumEditorContent").val(text);
+			}
+			return false;
+		});
+		$( "body" ).delegate( "a.defaultButton", "click", function() {
+			$(this).next().toggle();
+			return false;
+		});
+		$(".pagerNewInactive").click(function() {
+			window.location.href = window.location.origin + $(this).attr("href");
+			return false;
+		});
 		$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
 		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 		console.log(wrapper);
