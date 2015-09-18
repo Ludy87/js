@@ -1,19 +1,17 @@
-console.log("git")
-$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
-$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
-$.get(isModURL, function(data) {
-	var wrapper = $(data).find(".wrapper h1").text();
-	var host = window.location.href;
-	var hostSplit = host.split("/");
-	var hostPathLength = hostSplit.length;
-	var area = hostSplit[3];
-	var mail = hostSplit[6];
-	if(wrapper === "Moderatoren-Forum") {
-		if (mail == undefined && hostPathLength == 4) {
-			
-		} else if(area == "forum" && hostPathLength >= 6) {
-			console.log(area)
+$.get(app + "/wortfilter.txt", function(content) {
+	$('body').removeHighlight();
+	$.each(content.split(","), function(i,v) {
+		if (v) {
+			console.log(i + " " + v);
+			if(!$("span").hasClass(".highlight")) {
+				var high = ($('body').highlight( v ));
+			}
+			$(".filter").show();
 		}
-		
-	}
+	});
+	$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
+})
+.fail(function() {
+	$(".filter").text("Error: Wordfilterdatei ist default");
+	$(".filter").show();
 });
