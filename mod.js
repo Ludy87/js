@@ -6,3 +6,7 @@ $.get(isModURL, function(content) {
 		console.log(wrapper);
 	}
 });
+$(document).ready(function() {
+	iconURL = chrome.extension.getURL("/hallo.txt");
+	console.log(iconURL);
+});
