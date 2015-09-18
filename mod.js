@@ -5,13 +5,13 @@ $.get(isModURL, function(data) {
 	var host = window.location.href;
 	var hostSplit = host.split("/");
 	var hostPathLength = hostSplit.length;
-	var apit = hostSplit[3];
+	var area = hostSplit[3];
 	var mail = hostSplit[6];
 	if(wrapper === "Moderatoren-Forum") {
 		if (mail == undefined && hostPathLength == 4) {
 			
-		} else if(apit == "forum" && hostPathLength >= 6) {
-			console.log(apit)
+		} else if(area == "forum" && hostPathLength >= 6) {
+			console.log(area)
 		}
 		
 	}
