@@ -13,4 +13,6 @@ $.get(isModURL, function(content) {
 	}
 });
 
-$(document).ready(function() {});
+$(document).ready(function() {
+	$("iframe").remove();
+});
