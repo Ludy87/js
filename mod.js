@@ -12,4 +12,7 @@ $.get(isModURL, function(content) {
 		console.log(wrapper);
 	}
 });
+function button(uri, msg) {
+	return '<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="'+ uri +'">'+ msg +'</a>';
+}
 $(document).ready(function() {});
