@@ -10,7 +10,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    {
 	    	var form = $(data).find(".adminBox form")[2];
 	        console.log($(form).html());
-	        $(".forumThreadAdLeaderboardTop").before('<div>'+$(form).html()+'</div>')
+	        $(".forumThreadAdLeaderboardTop").after('<div>'+$(form).html()+'</div>')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
