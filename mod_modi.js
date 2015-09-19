@@ -9,7 +9,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small');
 	    	$(form).find('label').attr('style',"");
 	    	$(form).find('input#searchIpAddress').attr('size',"");
-	        console.log($(form).parent().html());
+	        console.log($(form).html());
 	        $(".forumThreadAdLeaderboardTop").after('<div>'+$(form).html()+'</div>')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
