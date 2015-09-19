@@ -16,9 +16,7 @@ $( "body" ).delegate(".schreib", "click", function() {
 	text += decodeURIComponent($(this).data("text"));
 	if(text.indexOf("%Name%") >= 0 || text.indexOf("%te%") >= 0) {
 		text = text.replace('%Name%' ,$("#receiverName").val()).replace('%te%' ,$("#receiverName").val());
-		console.log(text)
 	}
-	console.log($("textarea#text"));
 	$("textarea#text").val(text);
 	return false;
 });
