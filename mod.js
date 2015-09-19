@@ -74,8 +74,12 @@ function Android () {
 				});
 			}
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
-				$('table.infoTab' + postid).prepend('<tr><td>t</td></tr>')
+				$('table.infoTab' + postid).prepend('<tr><td><a href="#" class="closer">schließen</a></td></tr>')
 				$("table.infoTab" + postid).toggle();
+			});
+			$( "body" ).delegate( "a.closer", "click", function() {
+				$("table.infoTab" + postid).toggle();
+				return false;
 			});
 			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
 				var hrefIp = ($(this).attr("href")).split("=")[1];
