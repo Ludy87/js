@@ -1,4 +1,4 @@
-var userSearch = userSearch;
+var userS = userSearch;
 function Android () {
     this.getInfo = function() {
         this.chrome();
