@@ -13,7 +13,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
 	        $( "input" ).focus(function() {
 	        	$( this ).next('input[type=submit]').css( "display", "inline" ).fadeOut( 1000 );
-	        }
+	        });
 	        	
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
