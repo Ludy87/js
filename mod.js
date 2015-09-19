@@ -77,7 +77,7 @@ function Android () {
 				$("table.infoTab" + postid).toggle();
 			});
 			var tab = $("table.infoTab" + postid).find("a");
-			console.log($(tab).attr('href'));
+			console.log($(tab));
 		});
 	});
 	$( "body" ).delegate( "ul.threadPostOptionsButtons a", "click", function() {
