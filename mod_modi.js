@@ -1,11 +1,8 @@
 
 if(area == "forum" && hostPathLength >= 6) {
-	var formData = {searchIpAddress:"",type:"ipAddress"}; 
-	
 	$.ajax({
 	    url : userS,
 	    type: "GET",
-	    //data : formData,
 	    success: function(data, textStatus, jqXHR)
 	    {
 	    	var form = $(data).find(".adminBox form")[2];
