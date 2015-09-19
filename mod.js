@@ -3,7 +3,7 @@ var hostPathLength = hostSplit.length;
 $.get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
 	if(wrapper === "Moderatoren-Forum") {
-		
+		isMod = true;
 		if(area == "forum" && hostPathLength >= 6) {
 			
 		}
@@ -11,6 +11,7 @@ $.get(isModURL, function(content) {
 		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 		console.log(wrapper);
 	} else {
+		isMod = false;
 		console.log(wrapper);
 	}
 });
@@ -18,7 +19,9 @@ var i = 0;
 
 function Android () {
     this.getInfo = function() {
-        this.chrome();
+    	if(isMod) {
+        	this.chrome();
+    	}
     };
     
     this.chrome = function() {
