@@ -60,7 +60,6 @@ function Android () {
 					}
 					if(items.ipVisable) {
 						$(thisC).after('<table style="border: 1px solid black; border-radius: 5px; position: fixed; left: 50%; top: 50%; z-index: 9; background-color: beige; display: none;" class="infoTab' + postid + '">' + $(tr).html() + '</table>');
-						$('infoTab' + postid).prepend('<tr><td>t</td></tr>')
 						$(thisC).after('<button class="btn-primary-small padding-y-small info' + postid + '" style="background-color:#fe0000; margin-left: 1px;" data-ip="'+postid+'">IP\'s</button>');
 					}
 					if(items.adminSiteVisable) {
@@ -75,6 +74,7 @@ function Android () {
 				});
 			}
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
+				$('infoTab' + postid).prepend('<tr><td>t</td></tr>')
 				$("table.infoTab" + postid).toggle();
 			});
 			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
