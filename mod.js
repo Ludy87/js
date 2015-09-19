@@ -1,3 +1,5 @@
+var hostPathLength = hostSplit.length;
+
 $.get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
 	if(wrapper === "Moderatoren-Forum") {
