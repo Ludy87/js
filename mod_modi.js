@@ -4,8 +4,8 @@ if(area == "forum" && hostPathLength >= 6) {
 	
 	$.ajax({
 	    url : userS,
-	    type: "POST",
-	    data : formData,
+	    type: "GET",
+	    //data : formData,
 	    success: function(data, textStatus, jqXHR)
 	    {
 	    	var form = $(data).find(".adminBox form")[2];
