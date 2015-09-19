@@ -31,7 +31,9 @@ function Android () {
 		ipVisable: false,
 		viewWarningVisable: false
 	}, function(items) {
-		console.log(items.ipVisable)
+		if(items.teVisable) {
+			$("article.isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
+		}
 	});
 				
     }
