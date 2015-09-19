@@ -1,5 +1,5 @@
 var hostPathLength = hostSplit.length;
-var mod = false;
+var mod;
 
 $.get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
