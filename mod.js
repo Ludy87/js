@@ -16,13 +16,14 @@ $.get(isModURL, function(content) {
 	}
 });
 var i = 0;
+var myT = window.myThis;
 function Android () {
     this.getInfo = function() {
         console.log(isModURL);
         return;
     };
-    this.chrome = function(c) {
-    	c.chrome.storage.sync.get({
+    this.chrome = function() {
+    	myT.chrome.storage.sync.get({
 		teVisable: false,
 		adminSiteVisable: false,
 		mailToVisable: false,
