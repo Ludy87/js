@@ -15,12 +15,22 @@ $.get(isModURL, function(content) {
 		console.log(wrapper);
 	}
 });
-var i = 0;
 
 function Android () {
+	this.isMod = function() {
+		$.get(isModURL, function(content) {
+			var wrapper = $(content).find(".wrapper h1").text();
+			if(wrapper === "Moderatoren-Forum") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	};
+	
     this.getInfo = function() {
-    	console.log(isMod)
-    	if(isMod) {
+    	console.log(this.isMod)
+    	if(this.isMod) {
         	this.chrome();
     	}
     };
