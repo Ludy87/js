@@ -41,8 +41,11 @@ function Android () {
 				if(userId == "4361215" || userId == "2927890") {
 					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 				}
+				var thisC = this;
+				$.get(adminSite + userId, function(my_var) {
+					console.log(my_var)
+				});
 			}
-			console.log(this);
 		});
 	});
 				
