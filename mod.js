@@ -13,7 +13,8 @@ $.get(isModURL, function(content) {
 	}
 });
 
-$(document).ready(function() {
 	var host = window.location.href;
-	console.log(host);
+	var hostSplit = host.split("/");
+$(document).ready(function() {
+	console.log(hostSplit);
 });
