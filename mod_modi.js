@@ -13,8 +13,11 @@ if(area == "forum" && hostPathLength >= 6) {
 	        console.log($(form).html());
 	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
 
-		$( "input#searchIpAddress" ).click(function() {
+		$( "input#searchIpAddress" ).focus(function() {
 			$('input[type=submit]').css( "display", "inline" ).slideIn( 1000 );
+		});
+		$( "input#searchIpAddress" ).focusout(function() {
+			$('input[type=submit]').css( "display", "inline" ).slideOut( 1000 );
 		});
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
