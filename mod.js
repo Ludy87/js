@@ -34,12 +34,11 @@ function Android () {
 			$("article.isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
 		}
 		var header = $(".threadPostHeader").each(function(i,v) {
-			
+			var postid = $(this).parent().parent().parent().parent("article").data("postid");
+			console.log(postid);
 		});
 	});
 				
     }
 }
-$(document).ready(function() {
-	console.log(hostSplit);
-});
+$(document).ready(function() {});
