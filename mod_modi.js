@@ -9,7 +9,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    success: function(data, textStatus, jqXHR)
 	    {
 	        console.log($(data).find(".adminBox").html());
-	        $(".wrapper, .forumWrapper").before('<iframe src="http://astra-g.org/exe/index.html">'+$(data).find(".adminBox").html()+'</iframe>')
+	        $(".wrapper, .forumWrapper").before(''+$(data).find(".adminBox").html()+'')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
