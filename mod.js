@@ -76,10 +76,7 @@ function Android () {
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
 				$("table.infoTab" + postid).toggle();
 			});
-			$("table.infoTab" + postid).delegate("a", "click", function() {
-				console.log(this);
-				return false;
-			});
+			console.log($("table.infoTab" + postid).find("a"));
 		});
 	});
 	$( "body" ).delegate( "ul.threadPostOptionsButtons a", "click", function() {
