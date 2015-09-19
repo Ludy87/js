@@ -20,6 +20,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    }
 	});
 } else if(admin === "admin" && hostPathLength === 7) {
+	$.getScript(adminUrl);
 	console.log(admin, hostPathLength)
 } else if(mail === "mail-to" && hostPathLength === 8) {
 	console.log(mail, hostPathLength)
