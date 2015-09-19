@@ -75,7 +75,7 @@ function Android () {
 			}
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
 				$('a.closer' + postid).parent().parent().remove();
-				$('table.infoTab' + postid).prepend('<tr><td><a href="#" class="closer' + postid + '">schließen</a></td></tr>')
+				$('table.infoTab' + postid).prepend('<tr style="background-color: grey;line-height: 2;"><td style="text-align: center;"><a href="#" style="color: white" class="closer' + postid + '">schließen</a></td></tr>')
 				$("table.infoTab" + postid).toggle();
 			});
 			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
