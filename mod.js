@@ -13,8 +13,12 @@ $.get(isModURL, function(content) {
 	}
 });
 var i = 0;
-function T() {
-	retrun "e";
+function Apple (type) {
+    this.type = type;
+    this.color = "red";
+    this.getInfo = function() {
+        return this.color + ' ' + this.type + ' apple';
+    };
 }
 $(document).ready(function() {
 	console.log(hostSplit);
