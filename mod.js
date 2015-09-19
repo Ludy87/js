@@ -13,11 +13,10 @@ $.get(isModURL, function(content) {
 	}
 });
 var i = 0;
-function Apple (type) {
-    this.type = type;
-    this.color = "red";
+function Android () {
     this.getInfo = function() {
-        return this.color + ' ' + this.type + ' apple';
+        console.log(isModURL);
+        return;
     };
 }
 $(document).ready(function() {
