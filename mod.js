@@ -19,7 +19,7 @@ var i = 0;
 var myT = window.myThis;
 function Android () {
     this.getInfo = function() {
-        console.log(isModURL);
+        this.chrome();
         return;
     };
     this.chrome = function() {
