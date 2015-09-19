@@ -21,7 +21,7 @@ function Android () {
         this.chrome();
     };
     this.chrome = function() {
-    	myT.chrome.storage.sync.get({
+    	myThis.chrome.storage.sync.get({
 		teVisable: false,
 		adminSiteVisable: false,
 		mailToVisable: false,
