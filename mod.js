@@ -40,7 +40,6 @@ function Android () {
 					var tr = ($(tab).find("tbody tr")[0]);
 					var tr1 = ($(tab).find("tbody tr")[3]);
 					var tr2 = ($(tab).find("tbody tr")[4]);
-					$(tr).find("a").attr("class", "ipclick")
 					($(tr).children("td:first").remove());
 					($(tr1).children("td:first").remove());
 					($(tr2).children("td:first").remove());
@@ -76,6 +75,9 @@ function Android () {
 			}
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
 				$("table.infoTab" + postid).toggle();
+			});
+			$("table.infoTab" + postid).delegate("a", "click", function() {
+				console.log(this);	
 			});
 		});
 	});
