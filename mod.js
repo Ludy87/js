@@ -8,6 +8,7 @@ $.get(isModURL, function(content) {
 		if(area == "forum" && hostPathLength >= 6) {
 			
 		}
+		isMod = true;
 		$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
 		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 		console.log(wrapper);
@@ -18,10 +19,6 @@ $.get(isModURL, function(content) {
 });
 
 function Android () {
-   this.isMod = function() {
-    	
-    }; 
-	
     this.getInfo = function() {
     	if(this.isMod) {
         	this.chrome();
