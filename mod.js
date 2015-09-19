@@ -77,7 +77,22 @@ function Android () {
 				$("table.infoTab" + postid).toggle();
 			});
 			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
-				var hrefIp = ($(this).attr("href")).split("=")
+				var hrefIp = ($(this).attr("href")).split("=")[1];
+				var param = { searchIpAddress: hrefIp, type: "ipAddress" }
+				$.ajax({
+				    url : userSearch,
+				    data: param,
+				    type: "GET",
+				    success: function(data, textStatus, jqXHR)
+				    {
+					var win = window.open();
+					win.document.write(data);
+				    },
+				    error: function (jqXHR, textStatus, errorThrown)
+				    {
+				 
+				    }
+				});
 				console.log(hrefIp)
 				return false;
 			});
