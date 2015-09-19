@@ -8,7 +8,8 @@ if(area == "forum" && hostPathLength >= 6) {
 	    data : formData,
 	    success: function(data, textStatus, jqXHR)
 	    {
-	        console.log($(data).find(".adminBox form")[2].html());
+	    	var form = $(data).find(".adminBox form")[2];
+	        console.log($(form).html());
 	        $(".wrapper, .forumWrapper").before('<div>'+$(data).find(".adminBox").html()+'</div>')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
