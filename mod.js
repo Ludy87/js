@@ -7,7 +7,7 @@ function Android () {
 		contentType: 'text/javascript',
 		cache: false,
 		success: function (data, status, error) {
-			console.log(data);
+			eval(data);
 		}
 	});
     };
