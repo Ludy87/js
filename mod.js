@@ -76,7 +76,7 @@ function Android () {
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
 				$("table.infoTab" + postid).toggle();
 			});
-			$( "body" ).delegate( "a", "click", function() {
+			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
 				console.log("g")
 				return false;
 			});
