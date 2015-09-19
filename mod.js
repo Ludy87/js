@@ -15,11 +15,12 @@ $.get(isModURL, function(content) {
 	}
 });
 var i = 0;
-var myT = window.myThis;
+
 function Android () {
     this.getInfo = function() {
         this.chrome();
     };
+    
     this.chrome = function() {
     	myThis.chrome.storage.sync.get({
 		teVisable: false,
@@ -135,5 +136,21 @@ function Android () {
 		return false;
 	});			
     }
+}
+
+function writeSite() {
+	$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
+	chrome.storage.local.get(null, function(items) {
+		var allKeys = Object.keys(items);
+	
+		$.each(items, function(index, value) {
+			if(value != "" && index != "" ) {
+				if($(".schreib").text() != index) {
+					var myvar = '<li><a href="#" class="schreib btn-primary-small padding-y-small" style="margin: 1px; padding: 2px !important;" data-text="' + (value) + '">' + decodeURIComponent(index) + '</a></li>';
+					$("ul.myMenu").append(myvar);
+				}
+			}
+		});
+	});
 }
 $(document).ready(function() {});
