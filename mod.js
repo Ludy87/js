@@ -35,6 +35,13 @@ function Android () {
 		}
 		var header = $(".threadPostHeader").each(function(i,v) {
 			var postid = $(this).parent().parent().parent().parent("article").data("postid");
+			var userId = ($(v).find(".threadPostAuthorNameLink").attr("href").split("/")[2]);
+			var userImageLink = ($(v).find(".threadPostAuthorImage img").attr("src").split("/")[2]);
+			if(userId != "android") {
+				if(userId == "4361215" || userId == "2927890") {
+					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
+				}
+			}
 			console.log(postid);
 		});
 	});
