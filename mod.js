@@ -74,8 +74,8 @@ function Android () {
 				});
 			}
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
-				$('table.infoTab' + postid).remove("a.closer");
-				$('table.infoTab' + postid).prepend('<tr><td><a href="#" class="closer">schließen</a></td></tr>')
+				$('a.closer' + postid).remove();
+				$('table.infoTab' + postid).prepend('<tr><td><a href="#" class="closer' + postid + '">schließen</a></td></tr>')
 				$("table.infoTab" + postid).toggle();
 			});
 			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
