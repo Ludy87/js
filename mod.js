@@ -5,8 +5,6 @@ $.get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
 	if(wrapper === "Moderatoren-Forum") {
 		
-		app = new Android();
-		app.getInfo();
 		if(area == "forum" && hostPathLength >= 6) {
 			
 		}
@@ -16,6 +14,7 @@ $.get(isModURL, function(content) {
 	} else {
 		console.log(wrapper);
 	}
+	mod = true;
 });
 
 function Android () {
