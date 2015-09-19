@@ -1,10 +1,10 @@
 var hostPathLength = hostSplit.length;
 var mod;
 
-$(myThis).get(isModURL, function(content) {
+$.get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
 	if(wrapper === "Moderatoren-Forum") {
-		mod = true;
+		this.mod = true;
 		if(area == "forum" && hostPathLength >= 6) {
 			
 		}
@@ -12,7 +12,7 @@ $(myThis).get(isModURL, function(content) {
 		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 		console.log(wrapper);
 	} else {
-		mod = false;
+		this.mod = false;
 		console.log(wrapper);
 	}
 });
