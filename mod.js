@@ -1,4 +1,5 @@
 var userS = userSearch;
+var mailT = mailToUrl;
 function Android () {
     this.getInfo = function() {
         this.chrome();
