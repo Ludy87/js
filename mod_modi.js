@@ -10,7 +10,11 @@ if(area == "forum" && hostPathLength >= 6) {
 	    	$(form).find('label').attr('style',"");
 	    	$(form).find('input#searchIpAddress').attr('size',"");
 	        console.log($(form).html());
-	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>')
+	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
+	        $( "input" ).focus(function() {
+	        	$( this ).next('input[type=submit]').css( "display", "inline" ).fadeOut( 1000 );
+	        }
+	        	
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
