@@ -1,24 +1,26 @@
 var hostPathLength = hostSplit.length;
 var mod;
 
-$.get(isModURL, function(content) {
-	var wrapper = $(content).find(".wrapper h1").text();
-	if(wrapper === "Moderatoren-Forum") {
-		this.mod = true;
-		if(area == "forum" && hostPathLength >= 6) {
-			
-		}
-		$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
-		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
-		console.log(wrapper);
-	} else {
-		this.mod = false;
-		console.log(wrapper);
-	}
-});
+
 
 function Android () {
-    this.isMod = mod;
+    this.isMod = function() {
+    	$.get(isModURL, function(content) {
+		var wrapper = $(content).find(".wrapper h1").text();
+		if(wrapper === "Moderatoren-Forum") {
+			return true;
+			if(area == "forum" && hostPathLength >= 6) {
+				
+			}
+			$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
+			$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
+			console.log(wrapper);
+		} else {
+			return false;
+			console.log(wrapper);
+		}
+	});
+    };
 	
     this.getInfo = function() {
     	if(this.isMod) {
