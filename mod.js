@@ -15,15 +15,13 @@ $.get(isModURL, function(content) {
 });
 
 function Android () {
-	this.isMod = function() {
-		$.get(isModURL, function(content) {
+	this.isMod = $.get(isModURL, function(content) {
 			var wrapper = $(content).find(".wrapper h1").text();
 			if(wrapper === "Moderatoren-Forum") {
 				return true;
 			} else {
 				return false;
 			}
-		})
 	};
 	
     this.getInfo = function() {
