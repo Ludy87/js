@@ -19,6 +19,7 @@ var i = 0;
 
 function Android () {
     this.getInfo = function() {
+    	console.log(isMod)
     	if(isMod) {
         	this.chrome();
     	}
