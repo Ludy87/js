@@ -15,7 +15,7 @@ $.get(isModURL, function(content) {
 	} else {
 		console.log(wrapper);
 	}
-	mod = true;
+	isMod = true;
 });
 
 function Android () {
