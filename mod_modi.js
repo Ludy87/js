@@ -17,7 +17,7 @@ if(area == "forum" && hostPathLength >= 6) {
 			$('input[type=submit]').css( "display", "inline" ).slideIn( 1000 );
 		});
 		$( "input#searchIpAddress" ).focusout(function() {
-			$('input[type=submit]').css( "display", "inline" ).slideOut( 1000 );
+			$('input[type=submit]').css( "display", "none" );
 		});
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
