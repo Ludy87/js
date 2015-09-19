@@ -1,1 +1,1 @@
-console.log(window.href)
+console.log(window.location.href)
