@@ -23,7 +23,15 @@ if(area == "forum" && hostPathLength >= 6) {
 	$.getScript(adminUrl);
 	console.log(admin, hostPathLength)
 } else if(mail === "mail-to" && hostPathLength === 8) {
-	$.getScript(mailT);
+	$.ajax({
+		url: mailT,
+		type: "GET",
+		contentType: 'text/javascript',
+		cache: false,
+		success: function (data, status, error) {
+			eval(data);
+		}
+	});
 	console.log(mail, hostPathLength)
 }
 $(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
