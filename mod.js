@@ -77,27 +77,27 @@ function Android () {
 				$('table.infoTab' + postid).prepend('<tr><td><a href="#" class="closer">schließen</a></td></tr>')
 				$("table.infoTab" + postid).toggle();
 			});
-			$( "body" ).delegate( "a.closer", "click", function() {
-				$("table.infoTab" + postid).toggle();
-				return false;
-			});
 			$( "body" ).delegate( "table.infoTab" + postid + " a", "click", function() {
 				var hrefIp = ($(this).attr("href")).split("=")[1];
 				var param = { searchIpAddress: hrefIp, type: "ipAddress" }
-				$.ajax({
-				    url : userSearch,
-				    data: param,
-				    type: "GET",
-				    success: function(data, textStatus, jqXHR)
-				    {
-					var win = window.open();
-					win.document.write(data);
-				    },
-				    error: function (jqXHR, textStatus, errorThrown)
-				    {
-				 
-				    }
-				});
+				if(hrefIp === undefined) {
+					$("table.infoTab" + postid).toggle();
+				} else {
+					$.ajax({
+					    url : userSearch,
+					    data: param,
+					    type: "GET",
+					    success: function(data, textStatus, jqXHR)
+					    {
+						var win = window.open();
+						win.document.write(data);
+					    },
+					    error: function (jqXHR, textStatus, errorThrown)
+					    {
+					 
+					    }
+					});
+				}
 				console.log(hrefIp)
 				return false;
 			});
