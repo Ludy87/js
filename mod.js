@@ -13,6 +13,9 @@ $.get(isModURL, function(content) {
 	}
 });
 var i = 0;
+function T() {
+	retrun "e";
+}
 $(document).ready(function() {
 	console.log(hostSplit);
 });
