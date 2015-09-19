@@ -8,7 +8,8 @@ if(area == "forum" && hostPathLength >= 6) {
 	    data : formData,
 	    success: function(data, textStatus, jqXHR)
 	    {
-	        console.log($(data).find(".adminBox").html())
+	        console.log($(data).find(".adminBox").html());
+	        $(".wrapper, .forumWrapper").before('<iframe>'+$(data).find(".adminBox").html()+'</iframe>')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
