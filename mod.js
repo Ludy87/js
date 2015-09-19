@@ -1,7 +1,6 @@
 var hostPathLength = hostSplit.length;
-var mod;
 
-$.get(isModURL, function(content) {
+/**$.get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
 	if(wrapper === "Moderatoren-Forum") {
 		
@@ -16,13 +15,11 @@ $.get(isModURL, function(content) {
 		console.log(wrapper);
 	}
 	isMod = true;
-});
+});**/
 
 function Android () {
     this.getInfo = function() {
-    	if(this.isMod) {
-        	this.chrome();
-    	}
+        this.chrome();
     };
     
     this.chrome = function() {
