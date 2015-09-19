@@ -1,6 +1,6 @@
 
 if(area == "forum" && hostPathLength >= 6) {
-	var formData = {searchIpAddress:"127.0.0.1",type:"ipAddress"}; 
+	var formData = {searchIpAddress:"",type:"ipAddress"}; 
 	
 	$.ajax({
 	    url : userS,
