@@ -11,7 +11,6 @@ if(area == "forum" && hostPathLength >= 6) {
 	    	$(form).find('label').css('display',"none");
 	    	$(form).find('input#searchIpAddress').attr('size',"");
 	    	$(form).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
-	        console.log($(form).html());
 	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
 
 	    },
