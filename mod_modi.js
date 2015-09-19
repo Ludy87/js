@@ -14,7 +14,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
 
 		$( "input#searchIpAddress" ).focus(function() {
-			$('input[type=submit]').css( "display", "inline" ).slideIn( 1000 );
+			$('input[type=submit]').css( "display", "inline" );
 		});
 		$( "input#searchIpAddress" ).focusout(function() {
 			$('input[type=submit]').css( "display", "none" );
