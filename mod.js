@@ -42,7 +42,7 @@ function Android () {
 					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 				}
 			}
-			console.log(postid);
+			console.log(this);
 		});
 	});
 				
