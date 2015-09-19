@@ -10,7 +10,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    	$(form).find('label').attr('style',"");
 	    	$(form).find('input#searchIpAddress').attr('size',"");
 	        console.log($(form).html());
-	        $(".forumThreadAdLeaderboardTop").after('<div>'+$(form).html()+'</div>')
+	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
