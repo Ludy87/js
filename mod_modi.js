@@ -8,7 +8,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    data : formData,
 	    success: function(data, textStatus, jqXHR)
 	    {
-	        console.log($(data).html())
+	        console.log(data)
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
