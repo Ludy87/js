@@ -7,7 +7,8 @@ if(area == "forum" && hostPathLength >= 6) {
 	    {
 	    	var form = $(data).find(".adminBox form")[2];
 	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small');
-	    	$(form).find('label').attr('style',"");
+	    	//$(form).find('label').attr('style',"");
+	    	$(form).find('label').css('display',"none");
 	    	$(form).find('input#searchIpAddress').attr('size',"");
 	    	$(form).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
 	        console.log($(form).html());
@@ -23,6 +24,3 @@ if(area == "forum" && hostPathLength >= 6) {
 $(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
 $(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 console.log(wrapper);
-$(document).ready(function() {
-	$('label[for=searchIpAddress]').css('display','none');
-})
