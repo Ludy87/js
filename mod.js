@@ -12,7 +12,7 @@ $.get(isModURL, function(content) {
 		console.log(wrapper);
 	}
 });
-
+var i = 0;
 $(document).ready(function() {
 	console.log(hostSplit);
 });
