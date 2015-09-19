@@ -11,6 +11,11 @@ if(area == "forum" && hostPathLength >= 6) {
 	    	$(form).find('input#searchIpAddress').attr('size',"");
 	        console.log($(form).html());
 	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
+
+		$( "input#searchIpAddress" ).click(function() {
+			console.log(this)
+			$( this ).next('input[type=submit]').css( "display", "inline" ).fadeOut( 1000 );
+		});
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
@@ -18,10 +23,6 @@ if(area == "forum" && hostPathLength >= 6) {
 	    }
 	});
 }
-$( "input#searchIpAddress" ).click(function() {
-	console.log(this)
-	$( this ).next('input[type=submit]').css( "display", "inline" ).fadeOut( 1000 );
-});
 $(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
 $(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 console.log(wrapper);
