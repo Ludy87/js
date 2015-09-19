@@ -38,7 +38,6 @@ function Android () {
 				$.get(adminSite + userId, function(my_var) {
 					var tab = $(my_var).find("section table")[1];
 					var tr = ($(tab).find("tbody tr")[0]);
-					console.log($(tr).find("a"))
 					var tr1 = ($(tab).find("tbody tr")[3]);
 					var tr2 = ($(tab).find("tbody tr")[4]);
 					($(tr).children("td:first").remove());
@@ -76,6 +75,10 @@ function Android () {
 			}
 			$( "body" ).delegate( "button.info" + postid, "click", function() {
 				$("table.infoTab" + postid).toggle();
+			});
+			$( "table.infoTab" + postid ).delegate( "a", "click", function() {
+				console.log("g")
+				return false;
 			});
 		});
 	});
