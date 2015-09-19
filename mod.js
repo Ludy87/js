@@ -1,7 +1,7 @@
 var hostPathLength = hostSplit.length;
 var mod;
 
-$.get(isModURL, function(content) {
+$(myThis).get(isModURL, function(content) {
 	var wrapper = $(content).find(".wrapper h1").text();
 	if(wrapper === "Moderatoren-Forum") {
 		mod = true;
