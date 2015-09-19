@@ -18,7 +18,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    }
 	});
 }
-$( "input" ).focus(function() {
+$( "input" ).click(function() {
 	console.log(this)
 	$( this ).next('input[type=submit]').css( "display", "inline" ).fadeOut( 1000 );
 });
