@@ -19,8 +19,12 @@ if(area == "forum" && hostPathLength >= 6) {
 	 
 	    }
 	});
+} else if(admin === "admin") {
+	
+} else if(mail === "mail-to") {
+	
 }
-console.log(admin,mail)
+console.log(admin,mail, hostPathLength)
 $(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
 $(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 console.log(wrapper);
