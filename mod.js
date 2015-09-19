@@ -1,6 +1,15 @@
 function Android () {
     this.getInfo = function() {
         this.chrome();
+        $.ajax({
+		url: isModURL,
+		type: "GET",
+		contentType: 'text/javascript',
+		cache: false,
+		success: function (data, status, error) {
+			console.log(data);
+		}
+	});
     };
     
     this.chrome = function() {
