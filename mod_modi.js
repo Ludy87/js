@@ -9,6 +9,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    success: function(data, textStatus, jqXHR)
 	    {
 	    	var form = $(data).find(".adminBox form")[2];
+	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small')
 	        console.log($(form).html());
 	        $(".forumThreadAdLeaderboardTop").after('<div>'+$(form).html()+'</div>')
 	    },
