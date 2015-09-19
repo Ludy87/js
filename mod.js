@@ -12,12 +12,13 @@ $.get(isModURL, function(content) {
 		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 		console.log(wrapper);
 	} else {
+		mod = false;
 		console.log(wrapper);
 	}
 });
 
 function Android () {
-	this.isMod = mod;
+    this.isMod = mod;
 	
     this.getInfo = function() {
     	if(this.isMod) {
