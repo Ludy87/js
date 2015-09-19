@@ -20,7 +20,6 @@ var myT = window.myThis;
 function Android () {
     this.getInfo = function() {
         this.chrome();
-        return;
     };
     this.chrome = function() {
     	myT.chrome.storage.sync.get({
