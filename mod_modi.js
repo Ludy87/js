@@ -9,7 +9,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	    success: function(data, textStatus, jqXHR)
 	    {
 	        console.log($(data).find(".adminBox").html());
-	        $(".wrapper, .forumWrapper").before('<iframe>'+$(data).find(".adminBox").html()+'</iframe>')
+	        $(".wrapper, .forumWrapper").before('<iframe src="#">'+$(data).find(".adminBox").html()+'</iframe>')
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
