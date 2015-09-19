@@ -22,7 +22,7 @@ function Android () {
 			} else {
 				return false;
 			}
-	};
+	});
 	
     this.getInfo = function() {
     	if(this.isMod) {
