@@ -1,22 +1,3 @@
-var hostPathLength = hostSplit.length;
-
-/**$.get(isModURL, function(content) {
-	var wrapper = $(content).find(".wrapper h1").text();
-	if(wrapper === "Moderatoren-Forum") {
-		
-		if(area == "forum" && hostPathLength >= 6) {
-			
-		}
-		isMod = true;
-		$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
-		$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
-		console.log(wrapper);
-	} else {
-		console.log(wrapper);
-	}
-	isMod = true;
-});**/
-
 function Android () {
     this.getInfo = function() {
         this.chrome();
@@ -154,4 +135,3 @@ function writeSite() {
 		});
 	});
 }
-$(document).ready(function() {});
