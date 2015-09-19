@@ -3,7 +3,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	var formData = {searchIpAddress:"127.0.0.1",type:"ipAddress"}; 
 	
 	$.ajax({
-	    url : "https://www.androidpit.de/de/android/admin/userSearch",
+	    url : userS,
 	    type: "POST",
 	    data : formData,
 	    success: function(data, textStatus, jqXHR)
