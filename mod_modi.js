@@ -1,4 +1,8 @@
 if (mail == undefined && hostPathLength == 4) {
+	function writeText(text, position){
+		$(".newComment textarea#commentTextarea" + position).val(text);
+		$(".newComment textarea#commentTextarea" + position).height(($(this).prop('scrollHeight')+25));
+	}
 	$( "body" ).delegate( "button.replyForm", "click", function() {
 		if($(this).text().trim() == "Antworten") {
 			var commentId = $(this).data("reply");
