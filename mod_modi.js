@@ -36,7 +36,7 @@ if(area == "forum" && hostPathLength >= 6) {
 	if($(".httpErrorFooter").text().trim()) {
 		$("body").text("");
 		$("head").after("<body></body>");
-		$("body").load(adminSite + apitUserId)
+		$("body").load(adminSite + areaUserId)
 	}
 }
 $(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
