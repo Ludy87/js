@@ -11,7 +11,7 @@ if (mail == undefined && hostPathLength == 4) {
 	$( "body" ).delegate( "button.replyForm", "click", function() {
 		if($(this).text().trim() == "Antworten") {
 			var commentId = $(this).data("reply");
-			console.log($(commentId).parent());
+			console.log($(this).parent());
 			$("li#comment" + commentId.commentId + " .replyFormDiv").append("<div class=\"siteload\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 				myThis.chrome.storage.local.get(null, function(items) {
 					var allKeys = Object.keys(items);
