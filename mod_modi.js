@@ -1,4 +1,71 @@
 if (mail == undefined && hostPathLength == 4) {
+	var link = $(".commentContainer header a").each(function(index, value) {
+		if(!$(value).hasClass('commentLink')) {
+			var linkId = ($(value).attr("href").split("/")[2])
+			var $header = $(this).parent();
+			myThis.chrome.storage.sync.get({
+				adminSiteVisable: false,
+				mailToVisable: false,
+				warningVisable: false,
+				viewWarningVisable: false,
+				wordFilter: false,
+				wordFilterColor: "#FFF34D",
+				wordFilterColorText: "#FFFFFF"
+			}, function(items) {
+				console.log(items.wordFilter)
+				if(items.wordFilter) {
+					$(document).ready(function() {
+						$(".filter").remove()
+						$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
+						var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
+						$.get("chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl/wortfilter.txt", function(content) {
+							$('body').removeHighlight();
+							$.each(content.split(","), function(i,v) {
+								if (v) {
+									console.log(i + " " + v);
+									if(!$("span").hasClass(".highlight")) {
+										var high = ($('body').highlight( v ));
+									}
+									$(".filter").show();
+								}
+							});
+							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
+						})
+						.fail(function() {
+							$(".filter").text("Error: Wordfilterdatei ist default");
+							$(".filter").show();
+						});
+					});
+				}
+				$($header).each(function(i, v) {
+					var t = $(v).find("a");
+					$.get(mailTo + linkId, function() {
+					})
+					.done(function() {
+						$.get(adminSite + linkId, function(my_var) {
+							var tab = $(my_var).find("section table")[0];
+							var tr = $(tab).find("tr")[2];
+							if($(tr).find("td a").text() != "" && items.viewWarningVisable) {
+								$header.after('<a class="btn-primary-small padding-y-small" style="color:#fe0000 !important; background-color:#f0f0f0; margin-left: 1px;" href="' + listWarning + linkId + '">' + $(tr).find("td a").text() + '</a>')
+							}
+							if(items.warningVisable) {
+								$header.after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + linkId + '">Verwarnen</a>')
+							}
+							if(items.adminSiteVisable) {
+								$header.after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + linkId + '">Adminseite</a>')
+							}
+							if(items.mailToVisable) {
+								$header.after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + linkId + '">Mail schreiben</a>');
+							}
+						});
+					})
+					.fail(function() {
+						$header.after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px; background-color: red; cursor: default;">Gelöschter Account</a>')
+					});
+				});
+			});
+		}
+	});
 	function writeText(text, position){
 		$(".newComment textarea#commentTextarea" + position).val(text);
 		$(".newComment textarea#commentTextarea" + position).height(($(this).prop('scrollHeight')+25));
