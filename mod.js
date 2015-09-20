@@ -139,6 +139,7 @@ function Android () {
 				$(".forumEditorContent").val(text.replace('%te%' ,nameTE));
 			}
 		} else if(text.indexOf("%Name%") >= 0) {
+			console.log($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
 			var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
 			$(".forumEditorContent").val(text.replace('%Name%' ,name));
 		} else {
@@ -158,7 +159,6 @@ function Android () {
 }
 
 function writeSite() {
-	console.log($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
 	$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 	chrome.storage.local.get(null, function(items) {
 		var allKeys = Object.keys(items);
