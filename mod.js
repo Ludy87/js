@@ -122,6 +122,7 @@ function Android () {
 	$( "body" ).delegate( "a.schreib", "click", function() {
 		var text = $(".forumEditorContent").val();
 		text += decodeURIComponent($(this).data("text"));
+		var modName = ($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
 		if(text.indexOf("%te%") >= 0) {
 			if(window.location.href.indexOf("/page/") >= 0) {
 				var lage = window.location.href.length;
@@ -136,14 +137,13 @@ function Android () {
 			} else {
 				var first = $(".isThreadAuthor").first();
 				var nameTE = ($(first).find("a.threadPostAuthorNameLink").first().text().trim());
-				$(".forumEditorContent").val(text.replace('%te%' ,nameTE));
+				$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName));
 			}
 		} else if(text.indexOf("%Name%") >= 0) {
-			console.log($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
 			var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
-			$(".forumEditorContent").val(text.replace('%Name%' ,name));
+			$(".forumEditorContent").val(text.replace('%Name%' ,name).replace('%ModName%' ,modName));
 		} else {
-			$(".forumEditorContent").val(text);
+			$(".forumEditorContent").val(text.replace('%ModName%' ,modName));
 		}
 		return false;
 	});
