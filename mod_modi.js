@@ -32,6 +32,12 @@ if(area == "forum" && hostPathLength >= 6) {
 			eval(data);
 		}
 	});
+} else if(area == "user") {
+	if($(".httpErrorFooter").text().trim()) {
+		$("body").text("");
+		$("head").after("<body></body>");
+		$("body").load(adminSite + apitUserId)
+	}
 }
 $(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
 $(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
