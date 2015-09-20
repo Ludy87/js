@@ -1,5 +1,13 @@
-
-if(area == "forum" && hostPathLength >= 6) {
+if (mail == undefined && hostPathLength == 4) {
+	$( "body" ).delegate( "button.replyForm", "click", function() {
+		if($(this).text().trim() == "Antworten") {
+			var commentId = $(this).data("reply");
+			console.log(commentId.commentId);
+			$("li#comment" + commentId.commentId + " .replyFormDiv").append("<div class=\"siteload\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
+			loadMagazin(commentId.commentId);
+		}
+	});
+} else if(area == "forum" && hostPathLength >= 6) {
 	$.ajax({
 	    url : userS,
 	    type: "GET",
