@@ -21,12 +21,12 @@ if (mail == undefined && hostPathLength == 4) {
 					
 			
 					$( "body" ).delegate(".schreib", "click", function() {
-						var text = $("#commentTextarea" + position).val();
+						var text = $("#commentTextarea" + commentId.commentId).val();
 						//$(this).data("text");
 						text += decodeURIComponent($(this).data("text"));
 						console.log(".newComment textarea#commentTextarea" + text);
 						
-						setTimeout(writeText(text,position), 500);
+						setTimeout(writeText(text,commentId.commentId), 500);
 						
 						return false;
 					});
