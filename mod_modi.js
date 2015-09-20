@@ -3,10 +3,15 @@ if (mail == undefined && hostPathLength == 4) {
 		$(".newComment textarea#commentTextarea" + position).val(text);
 		$(".newComment textarea#commentTextarea" + position).height(($(this).prop('scrollHeight')+25));
 	}
+	$( "body" ).delegate( "button.addReplyComment, button.cancelReply", "click", function() {
+		var text = $(this).data("text");
+		$("div.siteload").remove();
+		return true;
+	});
 	$( "body" ).delegate( "button.replyForm", "click", function() {
 		if($(this).text().trim() == "Antworten") {
 			var commentId = $(this).data("reply");
-			console.log(commentId.commentId);
+			console.log($(commentId).parent());
 			$("li#comment" + commentId.commentId + " .replyFormDiv").append("<div class=\"siteload\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 				myThis.chrome.storage.local.get(null, function(items) {
 					var allKeys = Object.keys(items);
@@ -25,11 +30,14 @@ if (mail == undefined && hostPathLength == 4) {
 					
 			
 					$( "body" ).delegate(".schreib", "click", function() {
+						
+						var modName = "";
+						var name = "";
+						var nameTE = "";
 						var text = $("#commentTextarea" + commentId.commentId).val();
 						//$(this).data("text");
 						text += decodeURIComponent($(this).data("text"));
-						console.log(".newComment textarea#commentTextarea" + text);
-						
+						text = text.replace('%ModName%' ,modName).replace('%Name%' ,name).replace('%te%' ,nameTE)
 						setTimeout(writeText(text,commentId.commentId), 500);
 						
 						return false;
