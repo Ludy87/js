@@ -16,7 +16,7 @@ $( "body" ).delegate(".schreib", "click", function() {
 	var text = $("textarea#text").val(); //$(this).data("text");
 	text += decodeURIComponent($(this).data("text"));
 	if(text.indexOf("%Name%") >= 0 || text.indexOf("%te%") >= 0 || text.indexOf("%ModName%") >= 0) {
-		text = text.replace('%Name%' ,$("#receiverName").val()).replace('%te%' ,$("#receiverName").val()).replace('%te%' ,$("#senderName").val());
+		text = text.replace('%Name%' ,$("#receiverName").val()).replace('%te%' ,$("#receiverName").val()).replace('%ModName%' ,$("#senderName").val());
 	}
 	$("textarea#text").val(text);
 	return false;
