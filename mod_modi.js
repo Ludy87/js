@@ -4,7 +4,33 @@ if (mail == undefined && hostPathLength == 4) {
 			var commentId = $(this).data("reply");
 			console.log(commentId.commentId);
 			$("li#comment" + commentId.commentId + " .replyFormDiv").append("<div class=\"siteload\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
-			loadMagazin(commentId.commentId);
+				myThis.chrome.storage.local.get(null, function(items) {
+					var allKeys = Object.keys(items);
+					var zahl = $("a.schreib").length;
+					$.each($("a.schreib"), function(i,v) {
+						console.log(i + " : " + zahl)
+					})
+					$.each(items, function(index, value) {
+						if(value != "" && index != "" ) {
+							if($(".schreib").text() != index) {
+								var myvar = '<li><a href="#" style="padding: 2px;" class="schreib btn-primary-small padding-y-small" data-text="' + value + '">' + decodeURIComponent(index) + '</a></li>';
+								$("ul.myMenu").append(myvar);
+							}
+						}
+					});
+					
+			
+					$( "body" ).delegate(".schreib", "click", function() {
+						var text = $("#commentTextarea" + position).val();
+						//$(this).data("text");
+						text += decodeURIComponent($(this).data("text"));
+						console.log(".newComment textarea#commentTextarea" + text);
+						
+						setTimeout(writeText(text,position), 500);
+						
+						return false;
+					});
+			});
 		}
 	});
 } else if(area == "forum" && hostPathLength >= 6) {
