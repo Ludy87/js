@@ -158,6 +158,7 @@ function Android () {
 }
 
 function writeSite() {
+	console.log($("div.forumEditor").parent().parent());
 	$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 	chrome.storage.local.get(null, function(items) {
 		var allKeys = Object.keys(items);
