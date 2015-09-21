@@ -120,7 +120,15 @@ if (mail == undefined && hostPathLength == 4) {
 	  "width": "35px",
 	  "height": "35px"});
 	$("#forumThreadContainer").before(image);
-	$(".korb").confirm();
+	$(".korb").click(function() {
+		var txt;
+		var r = confirm("Press a button!");
+		if (r == true) {
+		    txt = "You pressed OK!";
+		} else {
+		    txt = "You pressed Cancel!";
+		}
+	});
 	$.ajax({
 	    url : userS,
 	    type: "GET",
