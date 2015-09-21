@@ -123,7 +123,23 @@ if (mail == undefined && hostPathLength == 4) {
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
 	$("body").append('<div id="dialog" title="Basic dialog"><p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the \'x\' icon.</p></div>')
 	$(".korb").click(function() {
-		$( "#dialog" ).dialog();
+		$( "#dialog" ).dialog({
+		  buttons: [
+		    {
+		      text: "Ok",
+		      icons: {
+		        primary: "ui-icon-heart"
+		      },
+		      click: function() {
+		        $( this ).dialog( "close" );
+		      }
+		 
+		      // Uncommenting the following line would hide the text,
+		      // resulting in the label being used as a tooltip
+		      //showText: false
+		    }
+		  ]
+		});
 	});
 	$.ajax({
 	    url : userS,
