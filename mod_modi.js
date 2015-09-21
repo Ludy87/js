@@ -124,8 +124,6 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialog" title="Basic dialog"><p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the \'x\' icon.</p></div>')
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
-	        autoOpen : false,
-	        width : 600,
 	        buttons : {
 	            "Ok" : function() {
 	                $(this).dialog("close");
