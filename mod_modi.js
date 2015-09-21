@@ -126,7 +126,7 @@ if (mail == undefined && hostPathLength == 4) {
 		$( "#dialog" ).dialog({
 			modal: true,
     			resizable: true,
-    			dialogClass: 'no-close success-dialog'
+    			dialogClass: 'no-close success-dialog',
 		        buttons : {
 		            "JA" : function() {
 		                $(this).dialog("close");
