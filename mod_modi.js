@@ -121,19 +121,15 @@ if (mail == undefined && hostPathLength == 4) {
 	  "height": "35px"});
 	$("#forumThreadContainer").before(image);
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
-	$("body").append('<div id="dialog" title="Basic dialog"><p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the \'x\' icon.</p></div>')
+	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>')
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
 	        buttons : {
-	            "Ok" : function() {
+	            "JA" : function() {
 	                $(this).dialog("close");
 	            },
-	            "Cancel" : $.extend(function() {
+	            "NEIN" : $.extend(function() {
 	                $(this).dialog("close");
-	            }, {
-	                classes : 'dismiss',
-	                title : 'Abbrechen',
-	                id : 'thisIsTheId'
 	            })
 	        }
 	    });
