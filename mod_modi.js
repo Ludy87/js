@@ -121,14 +121,9 @@ if (mail == undefined && hostPathLength == 4) {
 	  "height": "35px"});
 	$("#forumThreadContainer").before(image);
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
+	$("body").append('<div id="dialog" title="Basic dialog"><p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p></div>')
 	$(".korb").click(function() {
-		var txt;
-		var r = confirm("Thread wirklich in den Papierkorb verschieben?");
-		if (r == true) {
-		    txt = "You pressed OK!";
-		} else {
-		    txt = "You pressed Cancel!";
-		}
+		$( "#dialog" ).dialog();
 	});
 	$.ajax({
 	    url : userS,
