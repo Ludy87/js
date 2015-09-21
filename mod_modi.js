@@ -120,9 +120,10 @@ if (mail == undefined && hostPathLength == 4) {
 	  "width": "35px",
 	  "height": "35px"});
 	$("#forumThreadContainer").before(image);
+	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
 	$(".korb").click(function() {
 		var txt;
-		var r = confirm("Press a button!");
+		var r = confirm("Thread wirklich in den Papierkorb verschieben?");
 		if (r == true) {
 		    txt = "You pressed OK!";
 		} else {
