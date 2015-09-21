@@ -128,9 +128,9 @@ if (mail == undefined && hostPathLength == 4) {
 		            "JA" : function() {
 		                $(this).dialog("close");
 		            },
-		            "NEIN" : $.extend(function() {
+		            "NEIN" : function() {
 		                $(this).dialog("close");
-		            })
+		            }
 		        }
 		});
 	});
