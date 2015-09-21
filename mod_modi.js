@@ -124,15 +124,18 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>')
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
-	        buttons : {
-	            "JA" : function() {
-	                $(this).dialog("close");
-	            },
-	            "NEIN" : $.extend(function() {
-	                $(this).dialog("close");
-	            })
-	        }
-	    });
+			modal: true,
+    			resizable: true,
+    			dialogClass: 'no-close success-dialog'
+		        buttons : {
+		            "JA" : function() {
+		                $(this).dialog("close");
+		            },
+		            "NEIN" : $.extend(function() {
+		                $(this).dialog("close");
+		            })
+		        }
+		});
 	});
 	$.ajax({
 	    url : userS,
