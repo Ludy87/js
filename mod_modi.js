@@ -1,5 +1,4 @@
 if (mail == undefined && hostPathLength == 4) {
-	console.log($(".forumHeader, .forumHeaderThread").after("<p>Test</p>"))
 	var link = $(".commentContainer header a").each(function(index, value) {
 		if(!$(value).hasClass('commentLink')) {
 			var linkId = ($(value).attr("href").split("/")[2])
@@ -114,6 +113,7 @@ if (mail == undefined && hostPathLength == 4) {
 		}
 	});
 } else if(area == "forum" && hostPathLength >= 6) {
+	console.log($(".forumHeader, .forumHeaderThread").after("<p>Test</p>"))
 	$.ajax({
 	    url : userS,
 	    type: "GET",
