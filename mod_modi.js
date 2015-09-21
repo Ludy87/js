@@ -119,7 +119,6 @@ if (mail == undefined && hostPathLength == 4) {
 	  "class": "korb",
 	  "width": "35px",
 	  "border-radius": "35px",
-	  "-webkit-border-radius": "35px",
 	  "-moz-border-radius": "35px",
 	  "height": "35px"});
 	$("#forumThreadContainer").before(image);
