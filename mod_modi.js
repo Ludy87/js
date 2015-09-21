@@ -126,6 +126,10 @@ if (mail == undefined && hostPathLength == 4) {
 		$( "#dialog" ).dialog({
 		        buttons : {
 		            "JA" : function() {
+		            	$.post(korb+areaUserId,{ categoryId: "10970", threadId: areaUserId })
+		            		.done(function( data ) {
+					console.log( "Data Loaded: " + data );
+					});
 		                $(this).dialog("close");
 		            },
 		            "NEIN" : function() {
