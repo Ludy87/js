@@ -113,7 +113,7 @@ if (mail == undefined && hostPathLength == 4) {
 		}
 	});
 } else if(area == "forum" && hostPathLength >= 6) {
-	console.log($(".forumHeader, .forumHeaderThread").after("<p>Test</p>"))
+	console.log($(".pagerNew .forumThreadPagerTop").prepend("<p>Test</p>"))
 	$.ajax({
 	    url : userS,
 	    type: "GET",
