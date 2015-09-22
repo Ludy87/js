@@ -118,8 +118,8 @@ if (mail == undefined && hostPathLength == 4) {
 	  "src": base64_string,
 	  "class": "korb",
 	  "width": "35px",
-	  "margin": "0 5px -10px 0",
 	  "height": "35px"});
+	  $(image).css({margin: "0 5px -10px 0"})
 	//$("#forumThreadContainer").before(image);
 	$("#forumHeadingThread").prepend(image);
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
