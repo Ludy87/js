@@ -118,6 +118,8 @@ if (mail == undefined && hostPathLength == 4) {
 	  "src": base64_string,
 	  "class": "korb",
 	  "width": "35px",
+	  "margin-bottom": "-10px",
+	  "margin-right": "5px",
 	  "height": "35px"});
 	//$("#forumThreadContainer").before(image);
 	$("#forumHeadingThread").prepend(image);
