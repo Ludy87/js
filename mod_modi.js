@@ -118,9 +118,9 @@ if (mail == undefined && hostPathLength == 4) {
 	  "src": base64_string,
 	  "class": "korb",
 	  "width": "35px",
+	  "margin": "0 5px -10px 0",
 	  "height": "35px"});
 	//$("#forumThreadContainer").before(image);
-	$(".korb").css({margin-bottom: "-10px", margin-right: "5px"})
 	$("#forumHeadingThread").prepend(image);
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
 	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>')
