@@ -125,6 +125,7 @@ if (mail == undefined && hostPathLength == 4) {
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
 	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>');
 	$("body").append('<div id="dialogTry"><p><input type="text" class="korbText" /></p></div>');
+	$("body").append('<div id="dialogError"><p>mindestens 5 Zeichen!</p></div>');
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
 		        buttons : {
@@ -135,7 +136,16 @@ if (mail == undefined && hostPathLength == 4) {
 		            			$("#dialogTry").dialog({
 		            				buttons : {
 		            					"Okay" : function() {
-		            						console.log($(".korbText").val().text().length())
+		            						var str = $(".korbText").val();
+		            						if(str.length < 5) {
+		            							$("#dialogError").dialog({
+		            								buttons : {
+		            									"Okay" : function() {
+		            										$(this).dialog("close");
+		            									}
+		            								}
+		            							});
+		            						}
 		            					}
 		            				}	
 		            			});
