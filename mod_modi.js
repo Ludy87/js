@@ -123,7 +123,8 @@ if (mail == undefined && hostPathLength == 4) {
 	//$("#forumThreadContainer").before(image);
 	$("#forumHeadingThread").prepend(image);
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
-	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>')
+	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>');
+	$("body").append('<div id="dialogTry"><p><input type="text" class="korbText" /></p></div>');
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
 		        buttons : {
@@ -131,6 +132,13 @@ if (mail == undefined && hostPathLength == 4) {
 		            	$.post(korb,{ categoryId: "10970", threadId: areaUserId })
 		            		.done(function( data ) {
 		            			console.log(data);
+		            			$("#dialogTry").dialog({
+		            				button : {
+		            					"Okay" : function() {
+		            						console.log($(".korbText").val())
+		            					}
+		            				}	
+		            			});
 						//location.reload();
 					})
 					.fail(function( data ) {
