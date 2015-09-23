@@ -145,6 +145,10 @@ if (mail == undefined && hostPathLength == 4) {
 		            									}
 		            								}
 		            							});
+		            						} else {
+		            							console.log(AP.req.userId)
+		            							//$.post(poste, {userId=4361215&threadId=656953&content=teste})
+		            								//.done(function(data));
 		            						}
 		            					}
 		            				}	
