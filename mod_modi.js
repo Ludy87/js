@@ -135,7 +135,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            			$("#dialogTry").dialog({
 		            				buttons : {
 		            					"Okay" : function() {
-		            						console.log($(".korbText").val().length())
+		            						console.log($(".korbText").val().text().length())
 		            					}
 		            				}	
 		            			});
