@@ -133,7 +133,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            		.done(function( data ) {
 		            			console.log(data);
 		            			$("#dialogTry").dialog({
-		            				button : {
+		            				buttons : {
 		            					"Okay" : function() {
 		            						console.log($(".korbText").val())
 		            					}
