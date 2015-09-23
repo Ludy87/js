@@ -126,6 +126,7 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>');
 	$("body").append('<div id="dialogTry"><p><input type="text" class="korbText" /></p></div>');
 	$("body").append('<div id="dialogError"><p>mindestens 5 Zeichen!</p></div>');
+	var UID = AP.req.userId;
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
 		        buttons : {
@@ -146,7 +147,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            								}
 		            							});
 		            						} else {
-		            							console.log(AP.req.userId)
+		            							console.log(UID)
 		            							//$.post(poste, {userId=4361215&threadId=656953&content=teste})
 		            								//.done(function(data));
 		            						}
