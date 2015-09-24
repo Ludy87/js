@@ -129,7 +129,7 @@ if (mail == undefined && hostPathLength == 4) {
 	var scri = ($('script')[5]);
 	scri = ($(scri).text())
 	scri = (scri.split(":")[1])
-	console.log($.trim(scri.split(",")[0]))
+	var UID = ($.trim(scri.split(",")[0]))
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
 		        buttons : {
@@ -149,9 +149,8 @@ if (mail == undefined && hostPathLength == 4) {
 		            								}
 		            							});
 		            						} else {
-		            							//console.log(data)
-		            							//$.post(poste, {userId=4361215&threadId=656953&content=teste})
-		            								//.done(function(data));
+		            							$.post(poste, {userId: UID, threadId: areaUserId, content: str})
+		            								.done(function(data){]);
 		            						}
 		            					}
 		            				}	
