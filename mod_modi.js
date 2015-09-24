@@ -154,7 +154,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            									$.post(close, {threadId: areaUserId, closed: "1"})
 		            										.done(function(da) {
 		            											if(da.status == "ok") {
-		            												setTimeout(window.location.href = (urlHost+data.redirectURL), 2000);
+		            												window.setTimeout(window.location.href = (urlHost+data.redirectURL), 2000);
 		            											}
 		            										});
 		            									
