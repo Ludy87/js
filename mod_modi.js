@@ -151,6 +151,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            						} else {
 		            							$.post(poste, {userId: UID, threadId: areaUserId, content: str})
 		            								.done(function(data){
+		            									$.post(close, {threadId: areaUserId, closed: "1"});
 		            									window.location.href = (urlHost+data.redirectURL)
 		            								});
 		            						}
