@@ -127,7 +127,7 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialogTry"><p><input type="text" class="korbText" /></p></div>');
 	$("body").append('<div id="dialogError"><p>mindestens 5 Zeichen!</p></div>');
 	var scri = ($('script')[5]);
-	console.log($(scri).html())
+	scri = ($(scri).text())
 	console.log(scri.split(":"))
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
