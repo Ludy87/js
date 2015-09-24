@@ -126,6 +126,9 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialog"><p>Thrad in den Papierkorb verschieben?</p></div>');
 	$("body").append('<div id="dialogTry"><p><input type="text" class="korbText" /></p></div>');
 	$("body").append('<div id="dialogError"><p>mindestens 5 Zeichen!</p></div>');
+	$(document).ready(function() {
+		console.log(AP.req.userId)
+	})
 	var UID = AP.req.userId;
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
