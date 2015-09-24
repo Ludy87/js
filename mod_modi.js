@@ -132,7 +132,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            "JA" : function() {
 		            	$.post(korb,{ categoryId: "10970", threadId: areaUserId })
 		            		.done(function( data ) {
-		            			console.log($(data));
+		            			console.log($(data).find('script'));
 		            			$("#dialogTry").dialog({
 		            				buttons : {
 		            					"Okay" : function() {
