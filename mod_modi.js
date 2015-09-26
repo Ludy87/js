@@ -197,7 +197,7 @@ if (mail == undefined && hostPathLength == 4) {
 	});
 } else if(admin === "admin" && hostPathLength === 7 && host.indexOf('userSearch') > -1) {
 	$.getScript(adminUrl);
-	console.log(admin, hostPathLength)
+	console.log(admin, hostPathLength, host.indexOf('userSearch'))
 } else if(mail === "mail-to" && hostPathLength === 8) {
 	$.ajax({
 		url: mailT,
