@@ -133,12 +133,12 @@ function Android () {
 				$.get(newPage, function(content) {
 					var first = $(content).find(".isThreadAuthor").first();
 					var nameTE = ($(first).find("a.threadPostAuthorNameLink").text().trim());
-					$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName));
+					$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%Name%' ,name));
 				});
 			} else {
 				var first = $(".isThreadAuthor").first();
 				var nameTE = ($(first).find("a.threadPostAuthorNameLink").first().text().trim());
-				$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName).replace('%ModName%' ,modName));
+				$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName).replace('%Name%' ,name));
 			}
 		} else if(text.indexOf("%Name%") >= 0) {
 			var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
