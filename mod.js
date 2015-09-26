@@ -3,7 +3,7 @@ var mailT = mailToUrl;
 function Android () {
     this.getInfo = function() {
         this.chrome();
-        this.style();
+        this.top();
         $.ajax({
 		url: mod_modi_url,
 		type: "GET",
@@ -15,7 +15,27 @@ function Android () {
 	});
     };
     
-    this.style = function() {
+    this.top = function() {
+	$("body").append('<a href="#0" class="cd-top" style="border-radius: 50px; z-index: 100; left: 50%;">Top</a>');
+	var offset = 300,
+	offset_opacity = 1200,
+	scroll_top_duration = 700,
+	$back_to_top = $('.cd-top');
+
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) { 
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
     	$.ajax({
 	    url: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css',
 	    dataType: 'text',
@@ -23,11 +43,6 @@ function Android () {
 	        $('<style type="text/css">\n' + data + '</style>').appendTo("head");                    
 	    }                  
 	});
-    	$.get('https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css', function(data) {
-    		var cssStyle = data;
-    		//console.log(cssStyle)
-    		//$('<style type="text/css">\n' + cssStyle + '\n</style>').appendTo($('head'));
-    	});	
     };
     
     this.chrome = function() {
