@@ -16,9 +16,16 @@ function Android () {
     };
     
     this.style = function() {
+    	$.ajax({
+	    url: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css',
+	    dataType: 'text',
+	    success: function(data) {
+	        $('<style type="text/css">\n' + data + '</style>').appendTo("head");                    
+	    }                  
+	});
     	$.get('https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css', function(data) {
     		var cssStyle = data;
-    		console.log(cssStyle)
+    		//console.log(cssStyle)
     		//$('<style type="text/css">\n' + cssStyle + '\n</style>').appendTo($('head'));
     	});	
     };
