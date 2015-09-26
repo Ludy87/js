@@ -14,6 +14,14 @@ function Android () {
 	});
     };
     
+    this.style = function() {
+    	$('<link/>', {
+	   rel: 'stylesheet',
+	   type: 'text/css',
+	   href: 'https://github.com/Ludy87/js/edit/master/backToTop.css'
+	}).appendTo('head');	
+    };
+    
     this.chrome = function() {
     	myThis.chrome.storage.sync.get({
 		teVisable: false,
