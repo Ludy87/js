@@ -124,6 +124,7 @@ function Android () {
 		text += decodeURIComponent($(this).data("text"));
 		var modName = ($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
 		if(text.indexOf("%te%") >= 0) {
+			var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
 			if(window.location.href.indexOf("/page/") >= 0) {
 				var lage = window.location.href.length;
 				var newPage = window.location.href.substr(0,lage-1)+1;
@@ -132,12 +133,12 @@ function Android () {
 				$.get(newPage, function(content) {
 					var first = $(content).find(".isThreadAuthor").first();
 					var nameTE = ($(first).find("a.threadPostAuthorNameLink").text().trim());
-					$(".forumEditorContent").val(text.replace('%te%' ,nameTE));
+					$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName));
 				});
 			} else {
 				var first = $(".isThreadAuthor").first();
 				var nameTE = ($(first).find("a.threadPostAuthorNameLink").first().text().trim());
-				$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName));
+				$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName).replace('%ModName%' ,modName));
 			}
 		} else if(text.indexOf("%Name%") >= 0) {
 			var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
