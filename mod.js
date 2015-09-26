@@ -19,7 +19,7 @@ function Android () {
     	$('<link/>', {
 	   rel: 'stylesheet',
 	   type: 'text/css',
-	   href: 'https://github.com/Ludy87/js/edit/master/backToTop.css'
+	   href: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css'
 	}).appendTo('head');	
     };
     
