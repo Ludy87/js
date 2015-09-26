@@ -182,7 +182,7 @@ if (mail == undefined && hostPathLength == 4) {
 	    success: function(data, textStatus, jqXHR)
 	    {
 	    	var form = $(data).find(".adminBox form")[2];
-	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small');
+	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small').attr('value','suche');
 	    	//$(form).find('label').attr('style',"");
 	    	$(form).find('label').css('display',"none");
 	    	$(form).find('input#searchIpAddress').attr('size',"");
