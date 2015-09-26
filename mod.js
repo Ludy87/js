@@ -17,8 +17,9 @@ function Android () {
     
     this.style = function() {
     	$.get('https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css', function(data) {
-    		var cssStyle = $(data).text();
-    		$('<style type="text/css">\n' + cssStyle + '\n</style>').appendTo($('head'));
+    		var cssStyle = $(data);
+    		console.log(cssStyle)
+    		//$('<style type="text/css">\n' + cssStyle + '\n</style>').appendTo($('head'));
     	});	
     };
     
