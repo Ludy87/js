@@ -15,13 +15,29 @@ function Android () {
 	});
     };
     
-    this.style = function() {
+    this.style = function(callback) {
+
+	    if (typeof callback !== 'function') {
+	        throw 'Not a valid callback';
+	    };
+	
+	    $.get(file, function(css) {
+	
+	        var top = $('head > link[rel=stylesheet]').length ? $('head > link[rel=stylesheet]:last') : $('head > *:last'); 
+	
+	        top.after('<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css">');
+	
+	        callback();
+	
+	    });
+    });
+    /**this.style = function() {
     	$('<link/>', {
 	   rel: 'stylesheet',
 	   type: 'text/css',
 	   href: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css'
 	}).appendTo('head');	
-    };
+    };**/
     
     this.chrome = function() {
     	myThis.chrome.storage.sync.get({
