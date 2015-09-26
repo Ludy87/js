@@ -3,6 +3,7 @@ var mailT = mailToUrl;
 function Android () {
     this.getInfo = function() {
         this.chrome();
+        this.style();
         $.ajax({
 		url: mod_modi_url,
 		type: "GET",
