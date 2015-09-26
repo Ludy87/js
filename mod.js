@@ -30,7 +30,7 @@ function Android () {
 	        callback();
 	
 	    });
-    });
+    };
     /**this.style = function() {
     	$('<link/>', {
 	   rel: 'stylesheet',
