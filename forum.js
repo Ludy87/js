@@ -13,7 +13,6 @@
 				viewWarningVisable: false
 			}, function (obj) {
 				var header = ($(_this).find(".threadPostHeader"));
-				console.log($(_this).find(".isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink"))
 				var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 				var postid = ($(_this).data('postid'));
 				//$(this).find(".threadPostHeader").next().remove();
@@ -25,7 +24,7 @@
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
 					if(obj.teVisable) {
-						/**$(header + ".isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");**/
+						$(_this).find(".isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
 					}
 					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
 					if(obj.ipVisable) {
