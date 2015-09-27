@@ -6,6 +6,8 @@
   	offset_opacity = 1200,
   	scroll_top_duration = 700,
   	$back_to_top = $('.cd-top');
-  	console.log($(window));
+  	$(window).scroll(function(){
+  	  console.log(this)
+  	})
   }
 }(jQuery));
