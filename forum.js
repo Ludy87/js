@@ -18,7 +18,7 @@
 			var _this = this;
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				if($(this).text().trim() == "Antworten") {
-					$.fn.forum.writeSite();
+					$.fn.forum.writeSite(_this);
 				}
 			});
 			chrome.storage.sync.get({
@@ -62,7 +62,8 @@
 		});
 	}
 	
-	$.fn.forum.writeSite = function() {
+	$.fn.forum.writeSite = function(_this) {
+		console.log(_this)
 		$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 		/**chrome.storage.local.get(null, function(items) {
 			var allKeys = Object.keys(items);
