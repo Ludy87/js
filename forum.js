@@ -1,9 +1,10 @@
 (function($) {
 	
+		var bugVal;
 	$.fn.forum = function() {
 		var item = $.fn.forum.chrome($.fn.forum.workWithBugVal)
 			console.log(item)
-			console.log($.fn.forum.chrome($.fn.forum.workWithBugVal));
+			console.log(bugVal);
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
@@ -26,8 +27,6 @@
 		});
 	}
 	$.fn.forum.chrome = function(callback) {
-		var bugVal;
-		
 		chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
