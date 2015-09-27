@@ -23,8 +23,9 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
+					console.log($(_this).hasClass('.isThreadAuthor' ))
 					if(obj.teVisable) {
-						$(_this + '.isThreadAuthor' ).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
+						//$(_this).hasClass('.isThreadAuthor' ).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
 					}
 					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
 					if(obj.ipVisable) {
