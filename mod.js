@@ -1,6 +1,12 @@
 var userS = userSearch;
 var mailT = mailToUrl;
 function Android () {
+    this.ready = function() {
+    	$( document ).ready(function() {
+		$('article').forum();
+	});
+    };
+    
     this.getInfo = function() {
         this.chrome();
         this.top();
