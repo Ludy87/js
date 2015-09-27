@@ -32,6 +32,9 @@ function Android () {
 			if(this.readyState == 4){
 				if(this.status == 200){
 					eval(this.responseText);
+					$( document ).ready(function() {
+						$('article').all();
+					});
 				}
 			}
 		}
