@@ -46,6 +46,7 @@
 	}
 	
 	$.fn.forum.warning = function(header, userID, viewWarningVisable, warningVisable) {
+		console.log(header, userID, viewWarningVisable, warningVisable)
 		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined && viewWarningVisable) {
 			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
 		}
