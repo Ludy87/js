@@ -1,18 +1,5 @@
 (function($) {
-	/**$( "body" ).delegate( "ul.threadPostOptionsButtons a", "click", function() {
-		var mThis = this;
-		if($(this).text().trim() == "Antworten") {
-			$().ready(function() {
-				setTimeout(writeSite, 1500);
-			});
-		} else if($(this).text().trim() == "Antworten mit Zitat") {
-			$().ready(function() {
-				setTimeout(function() {
-					writeSite();
-				}, 1500);
-			});
-		} 
-	});**/
+
 	$.fn.forum = function() {
 		this.each(function() {
 			var _this = this;
@@ -82,21 +69,36 @@
 				$(this).next().toggle();
 				return false;
 			});
-			
-		}, 1500);
-	/**$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
-		chrome.storage.local.get(null, function(items) {
-			var allKeys = Object.keys(items);
-		
-			$.each(items, function(index, value) {
-				if(value != "" && index != "" ) {
-					if($(".schreib").text() != index) {
-						var myvar = '<li><a href="#" class="schreib btn-primary-small padding-y-small" style="margin: 1px; padding: 2px !important;" data-text="' + (value) + '">' + decodeURIComponent(index) + '</a></li>';
-						$("ul.myMenu").append(myvar);
+			$( _this ).delegate( "a.schreib", "click", function() {
+				var text = $(".forumEditorContent").val();
+				text += decodeURIComponent($(this).data("text"));
+				var modName = ($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
+				if(text.indexOf("%te%") >= 0) {
+					var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
+					if(window.location.href.indexOf("/page/") >= 0) {
+						var lage = window.location.href.length;
+						var newPage = window.location.href.substr(0,lage-1)+1;
+						var pages = window.location.href.split("/")
+						newPage = pages[0]+pages[1]+"//"+pages[2]+"/"+pages[3]+"/"+pages[4]+"/"+pages[5]+"/page/1";
+						$.get(newPage, function(content) {
+							var first = $(content).find(".isThreadAuthor").first();
+							var nameTE = ($(first).find("a.threadPostAuthorNameLink").text().trim());
+							$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%Name%' ,name));
+						});
+					} else {
+						var first = $(".isThreadAuthor").first();
+						var nameTE = ($(first).find("a.threadPostAuthorNameLink").first().text().trim());
+						$(".forumEditorContent").val(text.replace('%te%' ,nameTE).replace('%ModName%' ,modName).replace('%Name%' ,name));
 					}
+				} else if(text.indexOf("%Name%") >= 0) {
+					var name = ($(this).parent().parent().parent().parent().parent().parent().parent().parent().find("a.threadPostAuthorNameLink").first().text()).trim()
+					$(".forumEditorContent").val(text.replace('%Name%' ,name).replace('%ModName%' ,modName));
+				} else {
+					$(".forumEditorContent").val(text.replace('%ModName%' ,modName));
 				}
+				return false;
 			});
-		});**/
+		}, 1500);
 	}
 	
 	$.fn.forum.workWithBugVal = function(val) {
