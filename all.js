@@ -2,6 +2,17 @@
 	$.fn.all = function() {
 		$.fn.all.top();
 		$.fn.all.powerBarFix();
+		myThis.chrome.storage.sync.get({
+			teVisable: false,
+			adminSiteVisable: false,
+			mailToVisable: false,
+			pnChangerVisable: false,
+			warningVisable: false,
+			ipVisable: false,
+			viewWarningVisable: false
+		}, function(items) {
+			console.log(items)
+		};
 	}
 	$.fn.all.powerBarFix = function() {
 	    	$('.headerMain, .headerMain-forum').css('margin-top', '30px');
