@@ -12,7 +12,7 @@
 			viewWarningVisable: false
 		}, function(items) {
 			console.log(items)
-		};
+		});
 	}
 	$.fn.all.powerBarFix = function() {
 	    	$('.headerMain, .headerMain-forum').css('margin-top', '30px');
