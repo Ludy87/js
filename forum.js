@@ -13,8 +13,8 @@
 				viewWarningVisable: false
 			}, function (obj) {
 			        bugVal = obj;
-		    	});
 		    	console.log(bugVal)
+		    	});
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
