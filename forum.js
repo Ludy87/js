@@ -1,7 +1,19 @@
 (function($) {
 	
 	$.fn.forum = function() {
-		console.log($.fn.forum.chromeStorage());
+		var item;
+		chrome.storage.sync.get({
+			teVisable: false,
+			adminSiteVisable: false,
+			mailToVisable: false,
+			pnChangerVisable: false,
+			warningVisable: false,
+			ipVisable: false,
+			viewWarningVisable: false
+		}, function(items) {
+			item = (items)
+		});
+		console.log(item)
 		this.each( function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
@@ -24,19 +36,6 @@
 		});
 	}
 	
-	$.fn.forum.chromeStorage = function() {
-		return chrome.storage.sync.get({
-			teVisable: false,
-			adminSiteVisable: false,
-			mailToVisable: false,
-			pnChangerVisable: false,
-			warningVisable: false,
-			ipVisable: false,
-			viewWarningVisable: false
-		}, function(items) {
-			(items)
-		});	
-	};
 	$.fn.forum.warning = function(header, userID) {
 				if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined) {
 					$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
