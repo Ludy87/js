@@ -1,20 +1,9 @@
 (function($) {
 	
 	$.fn.forum = function() {
-		$.fn.forum.chrome($.fn.forum.workWithBugVal)
+		var item = $.fn.forum.chrome($.fn.forum.workWithBugVal)
 		this.each(function() {
-			var item;
-			chrome.storage.sync.get({
-				teVisable: false,
-				adminSiteVisable: false,
-				mailToVisable: false,
-				pnChangerVisable: false,
-				warningVisable: false,
-				ipVisable: false,
-				viewWarningVisable: false
-			}, function(items) {
-				item = (items)	
-			});
+			console.log(item)
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
