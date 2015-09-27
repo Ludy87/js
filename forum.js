@@ -68,7 +68,19 @@
 			($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"))
 			chrome.storage.local.get(null, function(items) {
 				var allKeys = Object.keys(items);
-				console.log(allKeys)
+				$.each(items, function(index, value) {
+					if(value != "" && index != "" ) {
+						if($(".schreib").text() != index) {
+							var myvar = '<li><a href="#" class="schreib btn-primary-small padding-y-small" style="margin: 1px; padding: 2px !important;" data-text="' + (value) + '">' + decodeURIComponent(index) + '</a></li>';
+							$("ul.myMenu").append(myvar);
+						}
+					}
+				});
+			});
+			
+			$( _this ).delegate( "a.defaultButton", "click", function() {
+				$(this).next().toggle();
+				return false;
 			});
 			
 		}, 1500);
