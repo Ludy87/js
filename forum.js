@@ -24,7 +24,7 @@
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
 					var $_article = $(_this).find('.threadPost.isThreadAuthor .threadPostNotEditor .threadPostAuthorName .threadPostAuthorNameLink').before("<span style=\"color: #43a8da;\">TE</span>");
-					console.log($_article)
+					console.log($(_this).attr('class'))
 					//console.log($_article.find("article.isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>"))
 					if(obj.teVisable) {
 						//$(_this).hasClass('.isThreadAuthor' ).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
