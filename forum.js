@@ -18,9 +18,7 @@
 			var _this = this;
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				if($(this).text().trim() == "Antworten") {
-					$(document).ready(function() {
-						$.fn.forum.writeSite(_this);
-					});
+					$.fn.forum.writeSite(_this);
 				}
 			});
 			chrome.storage.sync.get({
