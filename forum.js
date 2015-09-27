@@ -3,6 +3,7 @@
 	$.fn.forum = function() {
 		var item;
 		var _this = this;
+		this.each(function() {
 		chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
@@ -32,6 +33,8 @@
 					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
 			
 				}
+		});
+			
 		});
 	}
 	
