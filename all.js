@@ -1,5 +1,5 @@
 (function($) {
   $.fn.all = function() {
-    $(this).find('.forumThreadListPageLabelFixed, .instantScrollAnchor, .forumThreadListPageLabelFixedInside').remove();
+    console.log($(this).find('.forumThreadListPageLabelFixed, .instantScrollAnchor, .forumThreadListPageLabelFixedInside'));//.remove();
   }
 }(jQuery));
