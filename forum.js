@@ -23,13 +23,8 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
-					var $_article = $(_this).find('.threadPost.isThreadAuthor .threadPostNotEditor .threadPostAuthorName .threadPostAuthorNameLink').before("<span style=\"color: #43a8da;\">TE</span>");
-					if($(_this).attr('class') == "threadPost isThreadAuthor") {
-						console.log($(_this).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>"))
-					}
-					//console.log($_article.find("article.isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>"))
-					if(obj.teVisable) {
-						//$(_this).hasClass('.isThreadAuthor' ).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
+					if($(_this).attr('class') == "threadPost isThreadAuthor" && obj.teVisable) {
+						$(_this).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
 					}
 					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
 					if(obj.ipVisable) {
