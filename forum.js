@@ -23,7 +23,7 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
-					$.fn.forum.warning(header, userID);
+					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
 					$.fn.forum.ip(header, postid, userID);
 					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
 					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
@@ -38,8 +38,8 @@
 		return val;
 	}
 	
-	$.fn.forum.warning = function(header, userID) {
-		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined) {
+	$.fn.forum.warning = function(header, userID, viewWarningVisable, warningVisable) {
+		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined && viewWarningVisable) {
 			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
 		}
 		$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
