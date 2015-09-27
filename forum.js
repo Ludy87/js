@@ -17,7 +17,9 @@
 		this.each(function() {
 			var _this = this;
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
-				console.log(this);
+				if($(this).text().trim() == "Antworten") {
+					console.log(this);
+				}
 			});
 			chrome.storage.sync.get({
 				teVisable: false,
