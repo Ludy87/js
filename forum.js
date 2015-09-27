@@ -16,7 +16,9 @@
 	$.fn.forum = function() {
 		this.each(function() {
 			var _this = this;
-			console.log($(this).find("ul.threadPostOptionsButtons a"))
+			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+				console.log(this);
+			});
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
