@@ -16,8 +16,7 @@
 				ipVisable: false,
 				viewWarningVisable: false
 			}, function (obj) {
-			        console.log(obj.bugId);
-			        bugVal = obj.bugId;
+			        bugVal = obj;
 			        callback(bugVal);
 		    	});
 		}
