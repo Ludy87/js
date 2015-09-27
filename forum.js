@@ -66,7 +66,7 @@
 	
 	$.fn.forum.writeSite = function(_this) {
 		var editor = $(_this).find("div.forumEditor");
-		console.log((editor))
+		console.log((_this))
 		/**$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 		chrome.storage.local.get(null, function(items) {
 			var allKeys = Object.keys(items);
