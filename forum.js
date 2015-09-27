@@ -1,7 +1,7 @@
 (function($) {
 	
 	$.fn.forum = function() {
-			var t = new Boolean(false);
+		this.each(function() {
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
@@ -11,11 +11,8 @@
 				ipVisable: false,
 				viewWarningVisable: false
 			}, function (obj) {
-			        bugVal = obj;
-			        t = bugVal.adminSiteVisable;
+			        console.log(obj)
 		    	});
-		    	console.log(t)
-		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
