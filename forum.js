@@ -12,27 +12,27 @@
 			viewWarningVisable: false
 		}, function(items) {
 			item = (items)
-		});
-		console.log(item)
-		this.each( function() {
-			var header = ($(this).find(".threadPostHeader"));
-			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
-			var postid = ($(this).data('postid'));
-			//$(this).find(".threadPostHeader").next().remove();
-			if(userID == "android") {
-				userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("=")[1];
-			}
-			if(userID != "android") {
-				if(userID == "4361215" || userID == "2927890") {
-					$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
+			console.log(item)
+			this.each( function() {
+				var header = ($(this).find(".threadPostHeader"));
+				var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
+				var postid = ($(this).data('postid'));
+				//$(this).find(".threadPostHeader").next().remove();
+				if(userID == "android") {
+					userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("=")[1];
 				}
-				$.fn.forum.warning(header, userID)
-				$.fn.forum.ip(header, postid, userID); 
-				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
-				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
-				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
-		
-			}
+				if(userID != "android") {
+					if(userID == "4361215" || userID == "2927890") {
+						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
+					}
+					$.fn.forum.warning(header, userID)
+					$.fn.forum.ip(header, postid, userID); 
+					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
+					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
+					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
+			
+				}
+			});
 		});
 	}
 	
