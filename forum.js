@@ -15,7 +15,6 @@
 			}, function(items) {
 				item = (items)	
 			});
-			console.log(item)
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
