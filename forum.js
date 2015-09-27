@@ -1,7 +1,7 @@
 (function($) {
 	
 	$.fn.forum = function() {
-		$.fn.forum.chrome(workWithBugVal)
+		$.fn.forum.chrome($.fn.forum.workWithBugVal)
 		this.each(function() {
 			var item;
 			chrome.storage.sync.get({
@@ -47,13 +47,12 @@
 			ipVisable: false,
 			viewWarningVisable: false
 		}, function (obj) {
-			console.log(obj);
 			bugVal = obj;
 			callback(bugVal);
 		});
 	}
 	
-	function workWithBugVal(val) {
+	$.fn.forum.workWithBugVal = function(val) {
 		console.log(val)
 	}
 	
