@@ -2,7 +2,7 @@
 	$.fn.all = function() {
 		$.fn.all.top();
 		$.fn.all.powerBarFix();
-		myThis.chrome.storage.sync.get({
+		chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
 			mailToVisable: false,
