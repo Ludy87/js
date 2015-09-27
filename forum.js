@@ -1,7 +1,7 @@
 (function($) {
 	
 	$.fn.forum = function() {
-		$.fn.forum.chromeStorage();
+		console.log($.fn.forum.chromeStorage());
 		this.each( function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
@@ -25,7 +25,7 @@
 	}
 	
 	$.fn.forum.chromeStorage = function() {
-		return chrome.storage.sync.get({
+		chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
 			mailToVisable: false,
@@ -34,7 +34,7 @@
 			ipVisable: false,
 			viewWarningVisable: false
 		}, function(items) {
-			console.log(items)
+			return (items)
 		});	
 	};
 	$.fn.forum.warning = function(header, userID) {
