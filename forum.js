@@ -23,21 +23,12 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
-		console.log(header, userID, obj.viewWarningVisable, obj.warningVisable)
-					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
-		console.log(header, userID, obj.viewWarningVisable, obj.warningVisable)
-					if(obj.ipVisable) {
-						$.fn.forum.ip(header, postid, userID);
-					}
-					if(obj.adminSiteVisable) {
-						$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
-					}
-					if(obj.pnChangerVisable) {
-						$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
-					}
-					if(obj.mailToVisable) {
-						$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
-					}
+					$.fn.forum.warning(header, userID);
+					$.fn.forum.ip(header, postid, userID);
+					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
+					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
+					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
+					
 				}
 		    	});
 		});
@@ -47,13 +38,11 @@
 		return val;
 	}
 	
-	$.fn.forum.warning = function(header, userID, viewWarningVisable, warningVisable) {
-		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined && viewWarningVisable) {
+	$.fn.forum.warning = function(header, userID) {
+		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined) {
 			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
 		}
-		if(warningVisable)
-			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
-		}
+		$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
 	}
 	
 	$.fn.forum.ip = function(header, postid, userID) {
