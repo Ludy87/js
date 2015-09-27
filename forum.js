@@ -13,8 +13,7 @@
 				viewWarningVisable: false
 			}, function (obj) {
 				var header = ($(_this).find(".threadPostHeader"));
-				console.log($(header + ".isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink"))
-				console.log($(_this + ".isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink"))
+				console.log($(_this))
 				var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 				var postid = ($(_this).data('postid'));
 				//$(this).find(".threadPostHeader").next().remove();
