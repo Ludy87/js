@@ -1,8 +1,19 @@
 (function($) {
 	
 	$.fn.forum = function() {
-		var bugVal = ($.fn.forum.chrome());
-		console.log(bugVal);
+		var bugVal;
+		chrome.storage.sync.get({
+			teVisable: false,
+			adminSiteVisable: false,
+			mailToVisable: false,
+			pnChangerVisable: false,
+			warningVisable: false,
+			ipVisable: false,
+			viewWarningVisable: false
+		}, function (obj) {
+			bugVal = obj;
+		});
+		console.log(bugVal)
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
