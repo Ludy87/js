@@ -25,7 +25,7 @@
 	}
 	
 	$.fn.forum.chromeStorage = function() {
-		chrome.storage.sync.get({
+		return chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
 			mailToVisable: false,
@@ -34,7 +34,7 @@
 			ipVisable: false,
 			viewWarningVisable: false
 		}, function(items) {
-			return (items)
+			(items)
 		});	
 	};
 	$.fn.forum.warning = function(header, userID) {
