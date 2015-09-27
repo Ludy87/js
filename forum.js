@@ -1,5 +1,27 @@
 (function($) {
+	function workWithBugVal(val) {
+	    console.log(val)
+	}
 	
+	function getBugVal(callback) {
+	    var bugVal = "";
+	
+	    chrome.storage.sync.get({
+				teVisable: false,
+				adminSiteVisable: false,
+				mailToVisable: false,
+				pnChangerVisable: false,
+				warningVisable: false,
+				ipVisable: false,
+				viewWarningVisable: false
+			}, function (obj) {
+	        console.log(obj.bugId);
+	        bugVal = obj.bugId;
+	        callback(bugVal);
+	    });
+	}
+	
+	getBugVal(workWithBugVal);
 	$.fn.forum = function() {
 		this.each(function() {
 			var item;
