@@ -23,7 +23,7 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
-					console.log($(_this).hasClass('.isThreadAuthor' ))
+					console.log($(_this).parent().hasClass('.isThreadAuthor' ))
 					if(obj.teVisable) {
 						//$(_this).hasClass('.isThreadAuthor' ).find(".threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
 					}
