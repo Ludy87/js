@@ -1,7 +1,7 @@
 (function($) {
 	
 		function workWithBugVal(val) {
-		    return val;
+		    console.log( val );
 		}
 		
 		function getBugVal(callback) {
