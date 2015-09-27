@@ -18,7 +18,7 @@ function Android () {
     
     this.powerBar = function() {
     	$('.headerMain, .headerMain-forum').css('margin-top', '30px');
-    	$('.powerbarContainer').css('position', 'fixed').css('margin-top', '-30px').css('z-index', '100');
+    	$('.powerbarContainer').css('position', 'fixed').css('margin-top', '-30px').css('z-index', '100').css('width', '100%;');
     };
     
     this.top = function() {
