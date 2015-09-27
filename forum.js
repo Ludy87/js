@@ -1,7 +1,7 @@
 (function($) {
 	
 	$.fn.forum = function() {
-			var t;
+			var t = new Boolean(false);;
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
