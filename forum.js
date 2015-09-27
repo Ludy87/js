@@ -1,8 +1,22 @@
 (function($) {
-	
+	/**$( "body" ).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+		var mThis = this;
+		if($(this).text().trim() == "Antworten") {
+			$().ready(function() {
+				setTimeout(writeSite, 1500);
+			});
+		} else if($(this).text().trim() == "Antworten mit Zitat") {
+			$().ready(function() {
+				setTimeout(function() {
+					writeSite();
+				}, 1500);
+			});
+		} 
+	});**/
 	$.fn.forum = function() {
 		this.each(function() {
 			var _this = this;
+			console.log($(this).find("ul.threadPostOptionsButtons a"))
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
