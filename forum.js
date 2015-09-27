@@ -4,7 +4,7 @@
 	}
 	
 	function getBugVal(callback) {
-	    var bugVal = "";
+	    var bugVal;
 	
 	    chrome.storage.sync.get({
 				teVisable: false,
@@ -15,8 +15,8 @@
 				ipVisable: false,
 				viewWarningVisable: false
 			}, function (obj) {
-	        console.log(obj.bugId);
-	        bugVal = obj.bugId;
+	        console.log(obj);
+	        bugVal = obj;
 	        callback(bugVal);
 	    });
 	}
