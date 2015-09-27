@@ -1,10 +1,7 @@
 (function($) {
 	
-		var bugVal;
 	$.fn.forum = function() {
-		var item = $.fn.forum.chrome($.fn.forum.workWithBugVal)
-			console.log(item)
-			console.log(bugVal);
+		console.log($.fn.forum.chrome)
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
@@ -26,7 +23,8 @@
 			}
 		});
 	}
-	$.fn.forum.chrome = function(callback) {
+	$.fn.forum.chrome = function() {
+		var bugVal;
 		chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
@@ -37,8 +35,8 @@
 			viewWarningVisable: false
 		}, function (obj) {
 			bugVal = obj;
-			callback(bugVal);
 		});
+		return bugVal;
 	}
 	
 	$.fn.forum.workWithBugVal = function(val) {
