@@ -18,10 +18,7 @@
 			var _this = this;
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				if($(this).text().trim() == "Antworten") {
-					setTimeout(function(){
-						console.log(this);
-					}, 10000);
-					
+					$.fn.forum.writeSite();
 				}
 			});
 			chrome.storage.sync.get({
@@ -63,6 +60,22 @@
 				}
 		    	});
 		});
+	}
+	
+	$.fn.forum.writeSite = function() {
+		$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
+		/**chrome.storage.local.get(null, function(items) {
+			var allKeys = Object.keys(items);
+		
+			$.each(items, function(index, value) {
+				if(value != "" && index != "" ) {
+					if($(".schreib").text() != index) {
+						var myvar = '<li><a href="#" class="schreib btn-primary-small padding-y-small" style="margin: 1px; padding: 2px !important;" data-text="' + (value) + '">' + decodeURIComponent(index) + '</a></li>';
+						$("ul.myMenu").append(myvar);
+					}
+				}
+			});
+		});**/
 	}
 	
 	$.fn.forum.workWithBugVal = function(val) {
