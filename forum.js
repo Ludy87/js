@@ -42,7 +42,9 @@
 		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined && viewWarningVisable) {
 			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
 		}
-		$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
+		if(warningVisable) {
+			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
+		}
 	}
 	
 	$.fn.forum.ip = function(header, postid, userID) {
