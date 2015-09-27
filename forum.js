@@ -1,28 +1,28 @@
 (function($) {
+	$.fn.forum.chrome = function(callback) {
+		var bugVal;
+		
+		chrome.storage.sync.get({
+			teVisable: false,
+			adminSiteVisable: false,
+			mailToVisable: false,
+			pnChangerVisable: false,
+			warningVisable: false,
+			ipVisable: false,
+			viewWarningVisable: false
+		}, function (obj) {
+			console.log(obj);
+			bugVal = obj;
+			callback(bugVal);
+		});
+	}
+	
 	function workWithBugVal(val) {
-	    console.log(val)
+		console.log(val)
 	}
 	
-	function getBugVal(callback) {
-	    var bugVal;
-	
-	    chrome.storage.sync.get({
-				teVisable: false,
-				adminSiteVisable: false,
-				mailToVisable: false,
-				pnChangerVisable: false,
-				warningVisable: false,
-				ipVisable: false,
-				viewWarningVisable: false
-			}, function (obj) {
-	        console.log(obj);
-	        bugVal = obj;
-	        callback(bugVal);
-	    });
-	}
-	
-	getBugVal(workWithBugVal);
 	$.fn.forum = function() {
+		$.fn.forum.chrome(workWithBugVal)
 		this.each(function() {
 			var item;
 			chrome.storage.sync.get({
