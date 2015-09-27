@@ -23,7 +23,7 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
-					var $_article = $(_this).find('.threadPost.isThreadAuthor .threadPostNotEditor');
+					var $_article = $(_this).find('.threadPost.isThreadAuthor .threadPostNotEditor').before("<span style=\"color: #43a8da;\">TE</span>");
 					console.log($_article)
 					//console.log($_article.find("article.isThreadAuthor .threadPostAuthorName .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>"))
 					if(obj.teVisable) {
