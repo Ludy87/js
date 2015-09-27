@@ -12,7 +12,6 @@
 				viewWarningVisable: false
 			}, function (obj) {
 			        console.log(obj)
-		    	});
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
@@ -31,6 +30,7 @@
 				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
 		
 			}
+		    	});
 		});
 	}
 	$.fn.forum.chrome = function() {
