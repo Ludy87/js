@@ -18,7 +18,10 @@
 			var _this = this;
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				if($(this).text().trim() == "Antworten") {
-					console.log(this);
+					setTimeout(function(){
+						console.log(this);
+					}, 10000);
+					
 				}
 			});
 			chrome.storage.sync.get({
