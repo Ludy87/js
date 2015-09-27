@@ -19,7 +19,7 @@
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				if($(this).text().trim() == "Antworten") {
 					$(document).ready(function() {
-						setTimeout($.fn.forum.writeSite(_this), 5000);
+						$.fn.forum.writeSite(_this);
 					});
 				}
 			});
@@ -65,9 +65,11 @@
 	}
 	
 	$.fn.forum.writeSite = function(_this) {
-		var editor = $(_this).find("div.forumEditor");
-		console.log($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"))
-		/**$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
+		setTimeout(function() {
+			var editor = $(_this).find("div.forumEditor");
+			console.log($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"))
+		}, 5000);
+	/**$("div.forumEditor").prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
 		chrome.storage.local.get(null, function(items) {
 			var allKeys = Object.keys(items);
 		
