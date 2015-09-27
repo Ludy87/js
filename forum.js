@@ -2,8 +2,8 @@
 	
 	$.fn.forum = function() {
 		var item;
-		var _this = this;
 		this.each(function() {
+		var _this = this;
 		chrome.storage.sync.get({
 			teVisable: false,
 			adminSiteVisable: false,
