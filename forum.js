@@ -2,6 +2,7 @@
 	
 	$.fn.forum = function() {
 		this.each(function() {
+			var _this = this;
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
@@ -12,9 +13,9 @@
 				viewWarningVisable: false
 			}, function (obj) {
 			        console.log(obj)
-			var header = ($(this).find(".threadPostHeader"));
+			var header = ($(_this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
-			var postid = ($(this).data('postid'));
+			var postid = ($(_this).data('postid'));
 			//$(this).find(".threadPostHeader").next().remove();
 			if(userID == "android") {
 				userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("=")[1];
