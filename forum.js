@@ -1,8 +1,7 @@
 (function($) {
 	
-	$.fn.forum = function() {
 		function workWithBugVal(val) {
-		    console.log(val)
+		    return val;
 		}
 		
 		function getBugVal(callback) {
@@ -22,8 +21,9 @@
 			        callback(bugVal);
 		    	});
 		}
+	$.fn.forum = function() {
 		
-		getBugVal(workWithBugVal);
+		console.log(getBugVal(workWithBugVal));
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
