@@ -24,7 +24,7 @@
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
 					if(obj.teVisable) {
-						$(header).find("article.isThreadAuthor, .threadPostAuthorName, .threadPostAuthorNameLink").before("<span style=\"color: #43a8da;\">TE</span>");
+						$(header).find("article.isThreadAuthor, .threadPostAuthorName, .threadPostAuthorNameLink").first().before("<span style=\"color: #43a8da;\">TE</span>");
 					}
 					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
 					if(obj.ipVisable) {
