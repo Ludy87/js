@@ -3,9 +3,9 @@
 	$.fn.forum = function() {
 		var item;
 		this.each(function() {
-			var header = ($(_this).find(".threadPostHeader"));
+			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
-			var postid = ($(_this).data('postid'));
+			var postid = ($(this).data('postid'));
 			//$(this).find(".threadPostHeader").next().remove();
 			if(userID == "android") {
 				userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("=")[1];
