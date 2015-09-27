@@ -24,7 +24,7 @@
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
 					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
-					if(ipVisable) {
+					if(obj.ipVisable) {
 						$.fn.forum.ip(header, postid, userID);
 					}
 					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
