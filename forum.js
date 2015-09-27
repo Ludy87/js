@@ -3,6 +3,18 @@
 	$.fn.forum = function() {
 		var item;
 		this.each(function() {
+			chrome.storage.sync.get({
+				teVisable: false,
+				adminSiteVisable: false,
+				mailToVisable: false,
+				pnChangerVisable: false,
+				warningVisable: false,
+				ipVisable: false,
+				viewWarningVisable: false
+			}, function(items) {
+				item = (items)
+				console.log(item)	
+			});
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
@@ -21,19 +33,6 @@
 				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
 		
 			}
-		});
-		
-		chrome.storage.sync.get({
-			teVisable: false,
-			adminSiteVisable: false,
-			mailToVisable: false,
-			pnChangerVisable: false,
-			warningVisable: false,
-			ipVisable: false,
-			viewWarningVisable: false
-		}, function(items) {
-			item = (items)
-			console.log(item)	
 		});
 	}
 	
