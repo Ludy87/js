@@ -1,8 +1,8 @@
 (function($) {
 	
-    $.fn.forum = function() {
-        this.each( function() {
-            //$(this).text();
+	$.fn.forum = function() {
+		$.fn.forum.chromeStorage();
+		this.each( function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
@@ -19,12 +19,24 @@
 				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
 				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
 				$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
-
-			}
-        });
 		
-    }
+			}
+		});
+	}
 	
+	$.fn.forum.chromeStorage = function() {
+		return chrome.storage.sync.get({
+			teVisable: false,
+			adminSiteVisable: false,
+			mailToVisable: false,
+			pnChangerVisable: false,
+			warningVisable: false,
+			ipVisable: false,
+			viewWarningVisable: false
+		}, function(items) {
+			console.log(items)
+		});	
+	};
 	$.fn.forum.warning = function(header, userID) {
 				if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined) {
 					$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
