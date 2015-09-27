@@ -1,25 +1,4 @@
 (function($) {
-	$.fn.forum.chrome = function(callback) {
-		var bugVal;
-		
-		chrome.storage.sync.get({
-			teVisable: false,
-			adminSiteVisable: false,
-			mailToVisable: false,
-			pnChangerVisable: false,
-			warningVisable: false,
-			ipVisable: false,
-			viewWarningVisable: false
-		}, function (obj) {
-			console.log(obj);
-			bugVal = obj;
-			callback(bugVal);
-		});
-	}
-	
-	function workWithBugVal(val) {
-		console.log(val)
-	}
 	
 	$.fn.forum = function() {
 		$.fn.forum.chrome(workWithBugVal)
@@ -56,6 +35,27 @@
 		
 			}
 		});
+	}
+	$.fn.forum.chrome = function(callback) {
+		var bugVal;
+		
+		chrome.storage.sync.get({
+			teVisable: false,
+			adminSiteVisable: false,
+			mailToVisable: false,
+			pnChangerVisable: false,
+			warningVisable: false,
+			ipVisable: false,
+			viewWarningVisable: false
+		}, function (obj) {
+			console.log(obj);
+			bugVal = obj;
+			callback(bugVal);
+		});
+	}
+	
+	function workWithBugVal(val) {
+		console.log(val)
 	}
 	
 	$.fn.forum.warning = function(header, userID) {
