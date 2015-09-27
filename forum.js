@@ -23,43 +23,35 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
-					if(obj.warningVisable) {
-						$.fn.forum.warning(header, userID);
+					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
+					if(obj.ipVisable) {
+						$.fn.forum.ip(header, postid, userID);
 					}
-					$.fn.forum.ip(header, postid, userID); 
-					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
-					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
-					$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
-			
+					if(obj.adminSiteVisable) {
+						$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + adminSite + userID + '">Adminseite</a>');
+					}
+					if(obj.pnChangerVisable) {
+						$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + pnChange + userID + '">PN-Changer</a>');
+					}
+					if(obj.mailToVisable) {
+						$(header).after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px;" href="' + mailTo + userID + '">Mail schreiben</a>');
+					}
 				}
 		    	});
 		});
-	}
-	$.fn.forum.chrome = function() {
-		var bugVal;
-		chrome.storage.sync.get({
-			teVisable: false,
-			adminSiteVisable: false,
-			mailToVisable: false,
-			pnChangerVisable: false,
-			warningVisable: false,
-			ipVisable: false,
-			viewWarningVisable: false
-		}, function (obj) {
-			bugVal = obj;
-		});
-		return bugVal;
 	}
 	
 	$.fn.forum.workWithBugVal = function(val) {
 		return val;
 	}
 	
-	$.fn.forum.warning = function(header, userID) {
-				if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined) {
-					$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
-				}
-				$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
+	$.fn.forum.warning = function(header, userID, viewWarningVisable, warningVisable) {
+		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined && viewWarningVisable) {
+			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
+		}
+		if(warningVisable)
+			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + warning + userID + '">Verwarnen</a>');
+		}
 	}
 	
 	$.fn.forum.ip = function(header, postid, userID) {
