@@ -2,8 +2,8 @@
 	
 	$.fn.forum = function() {
 		var item = $.fn.forum.chrome($.fn.forum.workWithBugVal)
-		this.each(function() {
 			console.log(item)
+		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 			var postid = ($(this).data('postid'));
