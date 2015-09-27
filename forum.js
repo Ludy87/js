@@ -1,7 +1,7 @@
 (function($) {
 	
 	$.fn.forum = function() {
-		var bugVal = ($.fn.forum.chrome);
+		var bugVal = ($.fn.forum.chrome());
 		console.log(bugVal);
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
