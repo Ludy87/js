@@ -53,7 +53,7 @@
 	}
 	
 	$.fn.forum.workWithBugVal = function(val) {
-		console.log(val)
+		return(val)
 	}
 	
 	$.fn.forum.warning = function(header, userID) {
