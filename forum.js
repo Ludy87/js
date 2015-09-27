@@ -23,7 +23,9 @@
 					if(userID == "4361215" || userID == "2927890") {
 						$(header).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 					}
+		console.log(header, userID, obj.viewWarningVisable, obj.warningVisable)
 					$.fn.forum.warning(header, userID, obj.viewWarningVisable, obj.warningVisable);
+		console.log(header, userID, obj.viewWarningVisable, obj.warningVisable)
 					if(obj.ipVisable) {
 						$.fn.forum.ip(header, postid, userID);
 					}
@@ -46,7 +48,6 @@
 	}
 	
 	$.fn.forum.warning = function(header, userID, viewWarningVisable, warningVisable) {
-		console.log(header, userID, viewWarningVisable, warningVisable)
 		if($(header).find("div.threadPostWarningInfo a").attr("href") != undefined && viewWarningVisable) {
 			$(header).after('<a class="btn-primary-small padding-y-small" style="background-color:#fe0000; margin-left: 1px;" href="' + listWarning + userID + '">Alle Verwarnungen</a>');
 		}
