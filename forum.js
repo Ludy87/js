@@ -1,8 +1,7 @@
 (function($) {
 	
 	$.fn.forum = function() {
-			var bugVal = "";
-		
+			var t;
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
@@ -13,8 +12,9 @@
 				viewWarningVisable: false
 			}, function (obj) {
 			        bugVal = obj;
-		    	console.log(bugVal)
+			        t = bugVal.adminSiteVisable;
 		    	});
+		    	console.log(t)
 		this.each(function() {
 			var header = ($(this).find(".threadPostHeader"));
 			var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
