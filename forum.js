@@ -18,8 +18,8 @@
 			var _this = this;
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				if($(this).text().trim() == "Antworten") {
-					$().ready(function() {
-						setTimeout($.fn.forum.writeSite(_this), 1500);
+					$(document).ready(function() {
+						setTimeout($.fn.forum.writeSite(_this), 5000);
 					});
 				}
 			});
