@@ -188,7 +188,7 @@ if (mail == undefined && hostPathLength == 4) {
 	    	$(form).find('input#searchIpAddress').attr('size',"");
 	    	$(form).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
 	        $(".forumThreadAdLeaderboardTop").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
-
+		$(".forumSidebar").after('<div><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></div>');
 	    },
 	    error: function (jqXHR, textStatus, errorThrown)
 	    {
