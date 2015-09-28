@@ -232,7 +232,7 @@ $.ajax({
 		$(form).find('input#searchIpAddress').attr('size',"");
 		$(form).find('input#searchIpAddress').css('width',"100%");
 		$(form).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
-		$(".forumSidebar").prepend('<section class="forumSidebox searchip"><ul><li class="forumSideboxItem "><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></li></ul></section>');
+		$(".forumSidebar").prepend('<section class="forumSidebox searchip"><h2>Mod Panel</h2><ul><li class="forumSideboxItem "><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></li></ul></section>');
 	},
 	error: function (jqXHR, textStatus, errorThrown)
 	{
