@@ -10,7 +10,8 @@
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: rgba(232, 98, 86, 0.8) url(http://codyhouse.co/demo/back-to-top/img/cd-top-arrow.svg) no-repeat center 50%;
+  /* background: rgba(232, 98, 86, 0.8) url(http://codyhouse.co/demo/back-to-top/img/cd-top-arrow.svg) no-repeat center 50%; */
+  background: rgba(232, 98, 86, 0.8) url(https://cloud.githubusercontent.com/assets/4592558/10129458/4b438e64-65be-11e5-8f74-cf6e06391970.png) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
