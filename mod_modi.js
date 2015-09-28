@@ -181,6 +181,7 @@ if (mail == undefined && hostPathLength == 4) {
 	    type: "GET",
 	    success: function(data, textStatus, jqXHR)
 	    {
+	    	$('.forumSidebox .searchip').remove();
 	    	var form = $(data).find(".adminBox form")[2];
 	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small').attr('value','suche');
 	    	//$(form).find('label').attr('style',"");
@@ -231,7 +232,7 @@ $.ajax({
 		$(form).find('input#searchIpAddress').attr('size',"");
 		$(form).find('input#searchIpAddress').css('width',"100%");
 		$(form).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
-		$(".forumSidebar").prepend('<section class="forumSidebox"><ul><li class="forumSideboxItem "><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></li></ul></section>');
+		$(".forumSidebar").prepend('<section class="forumSidebox searchip"><ul><li class="forumSideboxItem "><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></li></ul></section>');
 	},
 	error: function (jqXHR, textStatus, errorThrown)
 	{
