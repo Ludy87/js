@@ -224,15 +224,22 @@ $.ajax({
 	type: "GET",
 	success: function(data, textStatus, jqXHR)
 	{
-		var form = $(data).find(".adminBox form")[2];
-		$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small searchip').attr('value','suche');
-		//$(form).find('label').attr('style',"");
-		$(form).find('.searchip').css('width',"100%");
-		$(form).find('label').css('display',"none");
-		$(form).find('input#searchIpAddress').attr('size',"");
-		$(form).find('input#searchIpAddress').css('width',"100%");
-		$(form).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
-		$(".forumSidebar").prepend('<section class="forumSidebox searchip"><h2>Mod Panel</h2><ul><li class="forumSideboxItem "><form action="/de/android/admin/userSearch" method="post">'+$(form).html()+'</form></li></ul></section>');
+		var formuser = $(data).find(".adminBox form")[1];
+		var formip = $(data).find(".adminBox form")[2];
+		$(formip).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small searchip').attr('value','suche');
+		$(formip).find('.searchip').css('width',"100%");
+		$(formip).find('label').css('display',"none");
+		$(formip).find('input#searchIpAddress').attr('size',"");
+		$(formip).find('input#searchIpAddress').css('width',"100%");
+		$(formip).find('input#searchIpAddress').attr('placeholder',"IP-Adresse");
+		$(formuser).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small searchuser').attr('value','suche');
+		$(formuser).find('.searchuser').css('width',"100%");
+		$(formuser).find('label').css('display',"none");
+		$(formuser).find('input#searchName').attr('size',"");
+		$(formuser).find('input#searchName').css('width',"100%");
+		$(formuser).find('input#searchName').attr('placeholder',"Username");
+
+		$(".forumSidebar").prepend('<section class="forumSidebox searchip"><h2>Mod Panel</h2><ul><li class="forumSideboxItem"><form action="/de/android/admin/userSearch" method="post">'+$(formip).html()+'</form></li><li class="forumSideboxItem"><form action="/de/android/admin/userSearch" method="post">'+$(formuser).html()+'</form></li></ul></section>');
 	},
 	error: function (jqXHR, textStatus, errorThrown)
 	{
