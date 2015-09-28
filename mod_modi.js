@@ -181,7 +181,7 @@ if (mail == undefined && hostPathLength == 4) {
 	    type: "GET",
 	    success: function(data, textStatus, jqXHR)
 	    {
-	    	$('.forumSidebox .searchip').remove();
+	    	$('.forumSidebox.searchip').remove();
 	    	var form = $(data).find(".adminBox form")[2];
 	    	$(form).find('input[type=submit]').attr('class', 'btn-primary-small padding-y-small').attr('value','suche');
 	    	//$(form).find('label').attr('style',"");
