@@ -46,7 +46,6 @@
 				if($(this).text().trim() == "Antworten") {
 					$.fn.forum.writeSite(_this);
 				}
-				return false;
 			});
 		});
 		$( this ).delegate( "a.defaultButton", "click", function() {
