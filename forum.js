@@ -44,14 +44,15 @@
 		});
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			//$(this).next().toggle();
-			console.log($(this));
 			$('.siteload').toggle();
 			return false;
 		});
 		$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+			console.log($(this));
 			if($(this).text().trim() == "Antworten") {
 				$.fn.forum.writeSite(_this);
 			}
+			return false;
 		});
 	}
 	
