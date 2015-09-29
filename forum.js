@@ -52,7 +52,6 @@
 	$.fn.forum.writeSite = function(_this) {
 		setTimeout(function() {
 			var editor = $(_this).find("div.forumEditor");
-			console.log(_this);
 			($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"))
 			chrome.storage.local.get(null, function(items) {
 				var allKeys = Object.keys(items);
@@ -69,6 +68,7 @@
 			
 			$( _this ).delegate( "a.defaultButton", "click", function() {
 				//$(this).next().toggle();
+			console.log(_this);
 				$('.siteload').toggle();
 				return false;
 			});
