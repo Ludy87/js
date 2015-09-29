@@ -43,8 +43,8 @@
 		    	});
 			$(this).delegate( "ul.threadPostOptionsButtons", "click", function() {
 				console.log($(_this));
-				if($(this).text().trim() == "Antworten") {
-					$.fn.forum.writeSite(this);
+				if($(_this).text().trim() == "Antworten") {
+					$.fn.forum.writeSite(_this);
 				}
 				return false;
 			});
