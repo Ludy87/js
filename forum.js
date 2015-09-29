@@ -50,7 +50,7 @@
 		$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 			console.log($(this));
 			if($(this).text().trim() == "Antworten") {
-				$.fn.forum.writeSite(_this);
+				$.fn.forum.writeSite(this);
 			}
 			return false;
 		});
