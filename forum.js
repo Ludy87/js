@@ -50,7 +50,7 @@
 			
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			//$(this).next().toggle();
-		console.log($(this).find('.siteload'));
+		console.log($(this));
 			$('.siteload').next().toggle();
 			return false;
 		});
