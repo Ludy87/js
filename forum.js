@@ -51,7 +51,7 @@
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			//$(this).next().toggle();
 		console.log($(this));
-			$('.siteload').next().toggle();
+			$('.siteload').toggle();
 			return false;
 		});
 	}
