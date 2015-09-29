@@ -66,7 +66,8 @@
 			});
 			
 			$( _this ).delegate( "a.defaultButton", "click", function() {
-				$(this).next().toggle();
+				//$(this).next().toggle();
+				$('.siteload').toggle();
 				return false;
 			});
 			$( _this ).delegate( "a.schreib", "click", function() {
