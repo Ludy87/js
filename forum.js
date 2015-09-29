@@ -47,6 +47,13 @@
 				}
 		    	});
 		});
+			
+		$( this ).delegate( "a.defaultButton", "click", function() {
+			//$(this).next().toggle();
+		console.log($(this).find('.siteload'));
+			$('.siteload').next().toggle();
+			return false;
+		});
 	}
 	
 	$.fn.forum.writeSite = function(_this) {
@@ -64,13 +71,6 @@
 						}
 					}
 				});
-			});
-			
-			$( _this ).delegate( "a.defaultButton", "click", function() {
-				//$(this).next().toggle();
-			console.log(_this);
-				$('.siteload').next().toggle();
-				return false;
 			});
 			$( _this ).delegate( "a.schreib", "click", function() {
 				var text = $(".forumEditorContent").val();
