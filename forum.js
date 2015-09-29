@@ -41,17 +41,17 @@
 					}
 				}
 		    	});
+			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+				console.log($(this));
+				if($(this).text().trim() == "Antworten") {
+					$.fn.forum.writeSite(this);
+				}
+				return false;
+			});
 		});
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			//$(this).next().toggle();
 			$('.siteload').toggle();
-			return false;
-		});
-		$('article').delegate( "ul.threadPostOptionsButtons a", "click", function() {
-			console.log($('article'));
-			if($(this).text().trim() == "Antworten") {
-				$.fn.forum.writeSite(this);
-			}
 			return false;
 		});
 	}
