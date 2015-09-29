@@ -43,7 +43,7 @@
 		    	});
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
 				console.log($(_this));
-				if($(_this).text().trim() == "Antworten") {
+				if($(this).text().trim() == "Antworten") {
 					$.fn.forum.writeSite(_this);
 				}
 				return false;
