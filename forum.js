@@ -42,7 +42,7 @@
 				}
 		    	});
 			$(this).delegate( "ul.threadPostOptionsButtons", "click", function() {
-				console.log($(this));
+				console.log($(_this));
 				if($(this).text().trim() == "Antworten") {
 					$.fn.forum.writeSite(this);
 				}
