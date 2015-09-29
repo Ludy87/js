@@ -47,7 +47,7 @@
 			$('.siteload').toggle();
 			return false;
 		});
-		$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+		$('article').delegate( "ul.threadPostOptionsButtons a", "click", function() {
 			console.log($(this));
 			if($(this).text().trim() == "Antworten") {
 				$.fn.forum.writeSite(this);
