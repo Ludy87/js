@@ -60,7 +60,7 @@
 		setTimeout(function() {
 			var editor = $(_this).find("div.forumEditor");
 			($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"));
-			$('.myMenu').next().remove();
+			$('.myMenu').find('li').remove();
 			chrome.storage.local.get(null, function(items) {
 				var allKeys = Object.keys(items);
 				
