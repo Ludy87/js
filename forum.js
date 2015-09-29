@@ -3,11 +3,6 @@
 	$.fn.forum = function() {
 		this.each(function() {
 			var _this = this;
-			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
-				if($(this).text().trim() == "Antworten") {
-					$.fn.forum.writeSite(_this);
-				}
-			});
 			chrome.storage.sync.get({
 				teVisable: false,
 				adminSiteVisable: false,
@@ -47,12 +42,16 @@
 				}
 		    	});
 		});
-			
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			//$(this).next().toggle();
-		console.log($(this));
+			console.log($(this));
 			$('.siteload').toggle();
 			return false;
+		});
+		$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+			if($(this).text().trim() == "Antworten") {
+				$.fn.forum.writeSite(_this);
+			}
 		});
 	}
 	
