@@ -48,7 +48,7 @@
 			return false;
 		});
 		$('article').delegate( "ul.threadPostOptionsButtons a", "click", function() {
-			console.log($(this));
+			console.log($('article'));
 			if($(this).text().trim() == "Antworten") {
 				$.fn.forum.writeSite(this);
 			}
