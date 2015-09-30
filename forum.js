@@ -49,15 +49,15 @@
 					$.fn.forum.writeSite(_this);
 				}
 			});
+			$(this).delegate('a.forumPostEditorCancel', 'click', function() {
+				console.log($(this),i);
+				return false;
+			});
 		});
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			$('.siteload').toggle();
 			return false;
 		});
-		$(this).delegate('a.forumPostEditorCancel', 'click', function() {
-			console.log($(this));
-			return false;
-		})
 	}
 	
 	$.fn.forum.writeSite = function(_this) {
