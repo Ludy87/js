@@ -33,9 +33,8 @@ function Android () {
 				if(this.status == 200){
 					eval(this.responseText);
 					var _this = this;
-						console.log($(_this).responseText);
 					$( document ).ready(function() {
-						console.log($(_this).responseText);
+						console.log(_this.responseText);
 					});
 				}
 			}
