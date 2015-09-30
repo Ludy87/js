@@ -41,17 +41,18 @@
 				}
 		    	});
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
+				$(_this).find('a.forumPostEditorCancel').attr('href',"#");
 				if($(this).text().trim() == "Antworten") {
 					$.fn.forum.writeSite(_this);
 				}
 			});
-			$(this).delegate('a.forumPostEditorCancel', 'click', function() {
-				location.reload();
-				return false;
-			});
 		});
 		$( this ).delegate( "a.defaultButton", "click", function() {
 			$('.siteload').toggle();
+			return false;
+		});
+		$(this).delegate('a.forumPostEditorCancel', 'click', function() {
+			location.reload();
 			return false;
 		});
 	}
@@ -71,7 +72,6 @@
 				});
 			});
 			$( _this ).delegate( "a.schreib", "click", function() {
-				$(_this).find('a.forumPostEditorCancel').attr('href',"#");
 				var text = $(".forumEditorContent").val();
 				text += decodeURIComponent($(this).data("text"));
 				var modName = ($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
