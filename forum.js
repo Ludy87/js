@@ -1,7 +1,10 @@
 (function($) {
 
 	$.fn.forum = function() {
+		var i = 0;
 		this.each(function() {
+			console.log(i);
+			i++;
 			var _this = this;
 			chrome.storage.sync.get({
 				teVisable: false,
