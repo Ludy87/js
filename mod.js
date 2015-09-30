@@ -91,7 +91,7 @@ function Android () {
 	    success: function(data) {
 	        $('<style type="text/css">\n' + data + '</style>').appendTo("head");                    
 	    }                  
-	});}
+	});})
     };
     
     this.chrome = function() {
