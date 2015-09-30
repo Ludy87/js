@@ -127,7 +127,7 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialogTry" style="display:none;"><p><input type="text" class="korbText" /></p></div>');
 	$("body").append('<div id="dialogError" style="display:none;"><p>mindestens 5 Zeichen!</p></div>');
 	var scri = ($('script')[7]);
-	console.log(scri)
+	console.log(scri,7)
 	scri = ($(scri).text())
 	scri = (scri.split(":")[1])
 	var UID = ($.trim(scri.split(",")[0]))
