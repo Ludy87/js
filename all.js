@@ -1,6 +1,7 @@
 function Androids () {
 	this.test = function() {
-		console.log(this)
+		$('.headerMain, .headerMain-forum').css('margin-top', '30px');
+	    	$('.powerbarContainer').css('position', 'fixed').css('margin-top', '-30px').css('z-index', '100').css('width', '100%');
 	}	
 }
 (function($) {
