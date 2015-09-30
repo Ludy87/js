@@ -13,7 +13,7 @@ function Android () {
 					eval(this.responseText);
 				    	$( document ).ready(function() {
 						$('article').forum();
-						new Android().all();
+						new Android().all(this);
 					});
 				}
 			}
@@ -22,10 +22,9 @@ function Android () {
 	}
     };
     
-    this.all = function() {
+    this.all = function(_this) {
     	ajax = new XMLHttpRequest();
-	var _this = this;
-	console.log(this)
+	console.log(_this)
 	if(ajax!=null){
 		ajax.open("GET","https://raw.githubusercontent.com/Ludy87/js/master/all.js?v=" + v,true);
 		ajax.setRequestHeader('X-Content-Type-Options','nosniff');
