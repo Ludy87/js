@@ -33,7 +33,7 @@ function Android () {
 				if(this.status == 200){
 					eval(this.responseText);
 					var _this = this;
-						console.log($().site());
+						console.log($($).site());
 					$( document ).ready(function() {
 					});
 				}
