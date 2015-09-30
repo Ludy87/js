@@ -1,10 +1,7 @@
 (function($) {
 
 	$.fn.forum = function() {
-		var i = 0;
 		this.each(function() {
-			console.log(i);
-			i++;
 			var _this = this;
 			chrome.storage.sync.get({
 				teVisable: false,
@@ -18,7 +15,6 @@
 				var header = ($(_this).find(".threadPostHeader"));
 				var userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("/")[2];
 				var postid = ($(_this).data('postid'));
-				//$(this).find(".threadPostHeader").next().remove();
 				if(userID == "android") {
 					userID = $(header).find(".threadPostAuthorNameLink").attr("href").split("=")[1];
 				}
@@ -65,8 +61,6 @@
 			var editor = $(_this).find("div.forumEditor");
 			($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"));
 			chrome.storage.local.get(null, function(items) {
-				var allKeys = Object.keys(items);
-				
 				$.each(items, function(index, value) {
 					if(value != "" && index != "" ) {
 						if($(".schreib").text() != index) {
@@ -77,7 +71,7 @@
 				});
 			});
 			$( _this ).delegate( "a.schreib", "click", function() {
-				$(_this).find('a.forumPostEditorCancel').attr('href',"#")
+				$(_this).find('a.forumPostEditorCancel').attr('href',"#");
 				var text = $(".forumEditorContent").val();
 				text += decodeURIComponent($(this).data("text"));
 				var modName = ($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
@@ -107,10 +101,6 @@
 				return false;
 			});
 		}, 1500);
-	}
-	
-	$.fn.forum.workWithBugVal = function(val) {
-		return val;
 	}
 	
 	$.fn.forum.warning = function(header, userID, viewWarningVisable, warningVisable) {
