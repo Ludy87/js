@@ -1,3 +1,8 @@
+function Androids () {
+	this.test = function() {
+		console.log(this)
+	}	
+}
 (function($) {
 	$.fn.site = function() {
 		$.fn.site.top();
