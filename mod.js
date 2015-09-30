@@ -13,7 +13,8 @@ function Android () {
 					eval(this.responseText);
 				    	$( document ).ready(function() {
 						$('article').forum();
-						new Android().all(this);
+						var an = new Android();
+						an.all(this);
 					});
 				}
 			}
