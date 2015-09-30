@@ -77,7 +77,7 @@
 				});
 			});
 			$( _this ).delegate( "a.schreib", "click", function() {
-				$(_this).find('a.forumPostEditorCancel').attr('href',"")
+				$(_this).find('a.forumPostEditorCancel').attr('href',"#")
 				var text = $(".forumEditorContent").val();
 				text += decodeURIComponent($(this).data("text"));
 				var modName = ($.trim($("div.forumEditor").parent().parent().find(".threadPostAuthorNameLink").text()));
