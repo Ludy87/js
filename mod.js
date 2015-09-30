@@ -25,7 +25,7 @@ function Android () {
     this.all = function() {
     	ajax = new XMLHttpRequest();
 	var _this = this;
-	 
+	console.log(this)
 	if(ajax!=null){
 		ajax.open("GET","https://raw.githubusercontent.com/Ludy87/js/master/all.js?v=" + v,true);
 		ajax.setRequestHeader('X-Content-Type-Options','nosniff');
