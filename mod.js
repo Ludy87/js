@@ -32,6 +32,7 @@ function Android () {
 			if(this.readyState == 4){
 				if(this.status == 200){
 					eval(this.responseText);
+					new Androids().test();
 					$( document ).ready(function() {
 						console.log($(this).site());
 					});
