@@ -34,7 +34,7 @@ function Android () {
 					eval(this.responseText);
 					var _this = this;
 					$( document ).ready(function() {
-						console.log($(this))//.all());
+						console.log($(this).all());
 					});
 				}
 			}
