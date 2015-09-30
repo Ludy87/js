@@ -42,8 +42,6 @@
 				}
 		    	});
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
-				console.log($(_this));
-				console.log($(this));
 				if($(this).text().trim() == "Antworten") {
 					$.fn.forum.writeSite(_this);
 				}
@@ -54,6 +52,7 @@
 			return false;
 		});
 		$(this).delegate('a.forumPostEditorCancel', 'click', function() {
+			console.log($(this));
 			return false;
 		})
 	}
@@ -66,9 +65,6 @@
 				var allKeys = Object.keys(items);
 				
 				$.each(items, function(index, value) {
-					console.log(value)
-					console.log(index)
-					console.log($('.schreib'))
 					if(value != "" && index != "" ) {
 						if($(".schreib").text() != index) {
 							var myvar = '<li><a href="#" class="schreib btn-primary-small padding-y-small" style="margin: 1px; padding: 2px !important;" data-text="' + (value) + '">' + decodeURIComponent(index) + '</a></li>';
