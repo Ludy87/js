@@ -50,7 +50,7 @@
 				}
 			});
 			$(this).delegate('a.forumPostEditorCancel', 'click', function() {
-				console.log($(this));
+				location.reload();
 				return false;
 			});
 		});
