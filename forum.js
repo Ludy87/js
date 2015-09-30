@@ -50,7 +50,6 @@
 			});
 		});
 		$( this ).delegate( "a.defaultButton", "click", function() {
-			//$(this).next().toggle();
 			$('.siteload').toggle();
 			return false;
 		});
@@ -60,11 +59,13 @@
 		setTimeout(function() {
 			var editor = $(_this).find("div.forumEditor");
 			($(editor).prepend("<a href=\"#\" style=\"margin: 1px; padding: 2px !important;\" class=\"defaultButton btn-primary-small padding-y-small\">StandardTexte</a><div class=\"siteload\" style=\"display: none;\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>"));
-			console.log($('.myMenu').find('li').remove());
 			chrome.storage.local.get(null, function(items) {
 				var allKeys = Object.keys(items);
 				
 				$.each(items, function(index, value) {
+					console.log(value)
+					console.log(index)
+					console.log($('.schreib'))
 					if(value != "" && index != "" ) {
 						if($(".schreib").text() != index) {
 							var myvar = '<li><a href="#" class="schreib btn-primary-small padding-y-small" style="margin: 1px; padding: 2px !important;" data-text="' + (value) + '">' + decodeURIComponent(index) + '</a></li>';
