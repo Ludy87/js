@@ -32,7 +32,7 @@ function Android () {
 			if(this.readyState == 4){
 				if(this.status == 200){
 					eval(this.responseText);
-					$( document ).ready(function() {
+					$( _this ).ready(function() {
 						console.log($(_this).site());
 					});
 				}
