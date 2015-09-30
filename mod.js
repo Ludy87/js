@@ -33,7 +33,7 @@ function Android () {
 				if(this.status == 200){
 					eval(this.responseText);
 					$( document ).ready(function() {
-						new Androids().test(this);
+						new OverSite().powerBarFix();
 					});
 				}
 			}
