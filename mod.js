@@ -11,14 +11,14 @@ function Android () {
 			if(this.readyState == 4){
 				if(this.status == 200){
 					eval(this.responseText);
-					var an = new Android().all(this);
-				    	$( document ).ready(function() {
-						$('article').forum();
-					});
 				}
 			}
 		}
 		ajax.send(null);
+	    	$( document ).ready(function() {
+			$('article').forum();
+			var an = new Android().all();
+		});
 	}
     };
     
