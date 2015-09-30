@@ -53,6 +53,9 @@
 			$('.siteload').toggle();
 			return false;
 		});
+		$(this).delegat('a.forumPostEditorCancel', 'click', function() {
+			return false;
+		})
 	}
 	
 	$.fn.forum.writeSite = function(_this) {
