@@ -1,13 +1,13 @@
 (function($) {
-	$.fn.all = function() {
-		$.fn.all.top();
-		$.fn.all.powerBarFix();
+	$.fn.site = function() {
+		$.fn.site.top();
+		$.fn.site.powerBarFix();
 	}
-	$.fn.all.powerBarFix = function() {
+	$.fn.site.powerBarFix = function() {
 	    	$('.headerMain, .headerMain-forum').css('margin-top', '30px');
 	    	$('.powerbarContainer').css('position', 'fixed').css('margin-top', '-30px').css('z-index', '100').css('width', '100%');
 	};
-	$.fn.all.top = function() {
+	$.fn.site.top = function() {
 		$('.forumThreadListPageLabelFixed, .instantScrollAnchor, .forumThreadListPageLabelFixedInside').remove();
 		$("body").append('<a href="#0" class="cd-top" style="border-radius: 50px; z-index: 100; left: 50%;">Top</a>');
 		var offset = 300,
