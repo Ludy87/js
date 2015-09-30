@@ -1,6 +1,7 @@
 function Androids () {
 	this.test = function(_this) {
-		console.log($(_this).find('.headerMain, .headerMain-forum').css('margin-top', '30px'));
+		var $head = $(_this).find('.headerMain, .headerMain-forum')[0];
+		$head.css('margin-top', '30px');
 	    	$('.powerbarContainer').css('position', 'fixed').css('margin-top', '-30px').css('z-index', '100').css('width', '100%');
 	}	
 }
