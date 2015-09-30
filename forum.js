@@ -41,7 +41,7 @@
 				}
 		    	});
 			$(this).delegate( "ul.threadPostOptionsButtons a", "click", function() {
-				$(_this).find('a.forumPostEditorCancel').attr('href',"#");
+				console.log($(_this).find('a.forumPostEditorCancel'));//.attr('href',"#");
 				if($(this).text().trim() == "Antworten") {
 					$.fn.forum.writeSite(_this);
 				}
