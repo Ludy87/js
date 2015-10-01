@@ -8,7 +8,7 @@ function Android () {
 		document.getElementsByTagName('head')[0].appendChild(script);
 		var form = '<form id="cse-search-box" action="https://google.com/cse"><input type="hidden" name="cx" value="006006678927633944778:-li7chryqxa" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" size="31" /><input type="submit" name="sa" value="such" /></form>';
 		$('.searchip').append('<gcse:searchbox></gcse:searchbox>');
-		$('.containerContent').prepend('<gcse:searchresults></gcse:searchresults>');
+		$('.searchip').append('<gcse:searchresults></gcse:searchresults>');
 	}
 	
     this.ready = function() {
