@@ -5,7 +5,12 @@ function Android () {
 		$(document).ready(function() {
 			setTimeout(function() {
 				var sText = $('script');
-				$('body').append('<p>' + $(sText).text() + '</p>')
+				var regExp = /\(userId: ([^,]+)\)/;
+				var matches = regExp.exec(sText);
+				
+				//matches[1] contains the value between the parentheses
+				console.log(matches[1]);
+				//$('body').append('<p>' + $(sText).text() + '</p>')
 			}, 1500);
 		});
 	};
