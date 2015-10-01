@@ -11,7 +11,7 @@ function Android () {
 			ajax.onreadystatechange = function(){
 				if(this.readyState == 4){
 					if(this.status == 200){
-						eval(this.responseText);
+						//eval(this.responseText);
 				    	$( document ).ready(function() {
 				    		$(".forumThreadAdLeaderboardTop").after('<div><gcse:search></gcse:search></div>');
 				    	});
