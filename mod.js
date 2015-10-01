@@ -13,7 +13,7 @@ function Android () {
 					if(this.status == 200){
 						eval(this.responseText);
 				    	$( document ).ready(function() {
-				    		$("body").append('<gcse:search></gcse:search>');
+				    		$(".powerbarLinks").append('<gcse:search></gcse:search>');
 				    	});
 					}
 				}
