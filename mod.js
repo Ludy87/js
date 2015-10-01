@@ -1,16 +1,6 @@
 var userS = userSearch;
 var mailT = mailToUrl;
 function Android () {
-	this.uid = function() {
-		$(document).ready(function() {
-			setTimeout(function() {
-				var sText = $('script').text();
-				var u = sText.split("userId: ")[1]
-				console.log(u.split(",")[0])
-				//$('body').append('<p>' + $(sText).text() + '</p>')
-			}, 100);
-		});
-	};
 	
     this.ready = function() {
     	ajax = new XMLHttpRequest();
