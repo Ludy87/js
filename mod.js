@@ -3,7 +3,9 @@ var mailT = mailToUrl;
 function Android () {
 	this.uid = function() {
 		$(document).ready(function() {
-			console.log(AP)
+			setTimeout(function() {
+				console.log(AP)
+			}, 1500);
 		});
 	};
 	
