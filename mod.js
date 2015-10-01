@@ -57,6 +57,7 @@ function Android () {
         this.chrome();
         this.top();
         this.powerBar();
+        this.searchBar();
         $.ajax({
 		url: mod_modi_url,
 		type: "GET",
