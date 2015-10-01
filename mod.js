@@ -5,8 +5,8 @@ function Android () {
 		$(document).ready(function() {
 			setTimeout(function() {
 				var sText = $('script').text();
-				var u = sText.split("userId:")
-				console.log(u)
+				var u = sText.split("userId: ")
+				console.log(u.split(",")[0])
 				//$('body').append('<p>' + $(sText).text() + '</p>')
 			}, 1500);
 		});
