@@ -244,7 +244,7 @@ $.ajax({
 		$(formuser).find('input#searchName').attr('size',"");
 		$(formuser).find('input#searchName').css('width',"100%");
 		$(formuser).find('input#searchName').attr('placeholder',"Username");
-		$("header").after('<gcse:searchresults></gcse:searchresults>');
+		$("body").append('<gcse:searchresults></gcse:searchresults>');
 		$(".forumSidebar").prepend('<section class="forumSidebox searchip"><h2>Mod Panel</h2><ul><li class="forumSideboxItem"><form action="/de/android/admin/userSearch" method="post">'+$(formip).html()+'</form></li><li class="forumSideboxItem"><form action="/de/android/admin/userSearch" method="post">'+$(formuser).html()+'</form></li><li class="forumSideboxItem"><gcse:searchbox></gcse:searchbox></li></ul></section>');
 		var script = document.createElement('script');
 		script.text = '(function() {var cx = "006006678927633944778:-li7chryqxa";var gcse = document.createElement("script");gcse.type = "text/javascript";gcse.async = true;gcse.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//cse.google.com/cse.js?cx=" + cx;var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(gcse, s);})();';
