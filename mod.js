@@ -4,7 +4,8 @@ function Android () {
 	this.uid = function() {
 		$(document).ready(function() {
 			setTimeout(function() {
-				$('body').append('<p>'+$('script').text()+'</p>')
+				var sText = $('script').text();
+				$('body').append('<p>' + sText + '</p>')
 			}, 1500);
 		});
 	};
