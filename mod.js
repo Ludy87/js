@@ -13,7 +13,7 @@ function Android () {
 					if(this.status == 200){
 						eval(this.responseText);
 				    	$( document ).ready(function() {
-				    		$(".containerContent").parent('<gcse:search></gcse:search>');
+				    		$(".forumThreadAdLeaderboardTop").after('<gcse:search></gcse:search>');
 				    	});
 					}
 				}
