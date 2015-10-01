@@ -7,7 +7,7 @@ function Android () {
 		script.text = '(function() {var cx = "006006678927633944778:-li7chryqxa";var gcse = document.createElement("script");gcse.type = "text/javascript";gcse.async = true;gcse.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//cse.google.com/cse.js?cx=" + cx;var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(gcse, s);})();';
 		document.getElementsByTagName('head')[0].appendChild(script);
 		var form = '<form id="cse-search-box" action="https://google.com/cse"><input type="hidden" name="cx" value="006006678927633944778:-li7chryqxa" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" size="31" /><input type="submit" name="sa" value="such" /></form>';
-		$('.containerContent').prepend('<gcse:searchbox></gcse:searchbox>');
+		$('.powerbarContainer').after('<gcse:searchbox></gcse:searchbox>');
 		$('.containerContent').prepend('<gcse:searchresults></gcse:searchresults>');
 	}
 	
