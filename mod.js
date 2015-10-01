@@ -9,7 +9,7 @@ function Android () {
 		var form = '<form id="cse-search-box" action="https://google.com/cse"><input type="hidden" name="cx" value="006006678927633944778:-li7chryqxa" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" size="31" /><input type="submit" name="sa" value="such" /></form>';
 	//	$("body").prepend('<gcse:searchresults></gcse:searchresults>');
 	//	$('.searchip ul').append('<li class="forumSideboxItem">T</li>');
-		console.log($('section.searchip ul'))
+		console.log($('<li class="forumSideboxItem"><p>T</p></li>').appendTo('section.searchip ul'))
 		//$(".forumSidebar").prepend('<section class="forumSidebox searchgoogle"><h2>Suche</h2><ul><li class="forumSideboxItem"><gcse:searchbox></gcse:searchbox></li></ul></section>');
 		//$(".forumSidebar").prepend('<section class="forumSidebox searchgoogle"><h2>Suche</h2><ul><li class="forumSideboxItem"><gcse:searchbox></gcse:searchbox><gcse:searchresults></gcse:searchresults></li></ul></section>');
 	}
