@@ -4,7 +4,7 @@ function Android () {
 	
 	this.searchBar = function() {
 		var script = document.createElement('script');
-		script.text = "var goT = 4";
+		script.text = '(function() {var cx = "006006678927633944778:-li7chryqxa";var gcse = document.createElement("script");gcse.type = "text/javascript";gcse.async = true;gcse.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//cse.google.com/cse.js?cx=" + cx;var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(gcse, s);})();';
 		document.getElementsByTagName('head')[0].appendChild(script);
 	}
 	
