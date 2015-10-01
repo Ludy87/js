@@ -7,7 +7,7 @@ function Android () {
 		script.text = '(function() {var cx = "006006678927633944778:-li7chryqxa";var gcse = document.createElement("script");gcse.type = "text/javascript";gcse.async = true;gcse.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//cse.google.com/cse.js?cx=" + cx;var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(gcse, s);})();';
 		document.getElementsByTagName('head')[0].appendChild(script);
 		var form = '<form id="cse-search-box" action="https://google.com/cse"><input type="hidden" name="cx" value="006006678927633944778:-li7chryqxa" /><input type="hidden" name="ie" value="UTF-8" /><input type="text" name="q" size="31" /><input type="submit" name="sa" value="such" /></form>';
-		$("body").prepend('<gcse:searchresults></gcse:searchresults>');
+	//	$("body").prepend('<gcse:searchresults></gcse:searchresults>');
 		$('.searchip ul').append('<li class="forumSideboxItem">T</li>');
 		//$(".forumSidebar").prepend('<section class="forumSidebox searchgoogle"><h2>Suche</h2><ul><li class="forumSideboxItem"><gcse:searchbox></gcse:searchbox></li></ul></section>');
 		//$(".forumSidebar").prepend('<section class="forumSidebox searchgoogle"><h2>Suche</h2><ul><li class="forumSideboxItem"><gcse:searchbox></gcse:searchbox><gcse:searchresults></gcse:searchresults></li></ul></section>');
