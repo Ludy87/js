@@ -4,7 +4,7 @@ function Android () {
 	this.uid = function() {
 		$(document).ready(function() {
 			setTimeout(function() {
-				var sText = $('script');
+				var sText = $('script').text();
 				var u = sText.split("userId:")
 				console.log(u)
 				//$('body').append('<p>' + $(sText).text() + '</p>')
