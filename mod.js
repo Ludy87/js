@@ -3,23 +3,9 @@ var mailT = mailToUrl;
 function Android () {
 	
 	this.searchBar = function() {
-		ajax = new XMLHttpRequest();
-	 
-		if(ajax!=null){
-			ajax.open("GET","https://raw.githubusercontent.com/Ludy87/js/master/search.js?v=" + v,true);
-			ajax.setRequestHeader('X-Content-Type-Options','nosniff');
-			ajax.onreadystatechange = function(){
-				if(this.readyState == 4){
-					if(this.status == 200){
-						eval(this.responseText);
-				    	$( document ).ready(function() {
-				    		//$(".forumThreadAdLeaderboardTop").after('<div><gcse:search></gcse:search></div>');
-				    	});
-					}
-				}
-			}
-			ajax.send(null);
-		}
+		var script = document.createElement('script');
+		script.text = "var goT = 4";
+		document.getElementsByTagName('head')[0].appendChild(script);
 	}
 	
     this.ready = function() {
