@@ -128,16 +128,13 @@ if (mail == undefined && hostPathLength == 4) {
 	$("body").append('<div id="dialogError" style="display:none;"><p>mindestens 5 Zeichen!</p></div>');
 	
 	$(document).ready(function() {
-		setTimeout(function() {
-			var sText = $('script').text();
-			var u = sText.split("userId: ")[1]
-			console.log(u.split(",")[0])
-		}, 100);
-	var scri = ($('script')[7]);
-	console.log(scri,7)
-	scri = ($(scri).text())
-	scri = (scri.split(":")[1])
-	var UID = ($.trim(scri.split(",")[0]))
+		var sText = $('script').text();
+		var u = sText.split("userId: ")[1]
+	//var scri = ($('script')[7]);
+	//console.log(scri,7)
+	//scri = ($(scri).text())
+	//scri = (scri.split(":")[1])
+	var UID = ($.trim(u.split(",")[0]))
 	$(".korb").click(function() {
 		$( "#dialog" ).dialog({
 		        buttons : {
