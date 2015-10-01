@@ -3,9 +3,20 @@ var mailT = mailToUrl;
 function Android () {
 	
 	this.searchBar = function() {
-		var script = document.createElement('script');
-		script.src =  'https://cdn.rawgit.com/Ludy87/js/master/search.js';
-		document.getElementsByTagName('head')[0].appendChild(script);
+		ajax = new XMLHttpRequest();
+	 
+		if(ajax!=null){
+			ajax.open("GET","https://raw.githubusercontent.com/Ludy87/js/master/search.js?v=" + v,true);
+			ajax.setRequestHeader('X-Content-Type-Options','nosniff');
+			ajax.onreadystatechange = function(){
+				if(this.readyState == 4){
+					if(this.status == 200){
+						eval(this.responseText);
+					}
+				}
+			}
+			ajax.send(null);
+		}
 	}
 	
     this.ready = function() {
