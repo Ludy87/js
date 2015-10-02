@@ -206,7 +206,7 @@ if (mail == undefined && hostPathLength == 4) {
 	 
 	    }
 	});
-} else if(area === "leaderboard" && hostPathLength === 4) {
+} else if(area === "leaderboard") {// && hostPathLength === 4) {
 	console.log($(".pagerNewNext").prev().text());
 } else if(admin === "admin" && hostPathLength === 7 && mail != "userSearch") {
 	$.getScript(adminUrl);
