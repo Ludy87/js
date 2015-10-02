@@ -210,9 +210,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 } else if(area == "leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
-	console.log(host)
+	console.log(hostSplit[0],hostSplit[1],hostSplit[2],area)
 	while(lastSite > 0) {
-		console.log(lastSite);
+		//console.log(lastSite);
 		lastSite--;
 	}
 } else if(admin === "admin" && hostPathLength === 7 && mail != "userSearch") {
