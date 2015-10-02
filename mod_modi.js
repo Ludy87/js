@@ -210,9 +210,12 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 } else if(area == "leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
-	var path = (hostSplit[0] + "/" + hostSplit[1] + "/" + hostSplit[2] + "/"+area);
+	var path = (hostSplit[0] + "/" + hostSplit[1] + "/" + hostSplit[2] + "/" + area + "/page/");
 	console.log(path);
-	while(lastSite > 0) {
+	while(lastSite > 136071) {
+		$.get( path + lastSite, function( data ) {
+			console.log($( data ).find('.leaderboardTable div.leaderboard-user'));
+		});
 		//console.log(lastSite);
 		lastSite--;
 	}
