@@ -207,10 +207,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	 
 	    }
 	});
-} else if(area == "leaderboard" && hostPathLength === 4) {
+} else if(area == "leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
-		console.log(lastSite);
-	//lastSite = lastSite.replace(".","");
+	lastSite = lastSite.replace(".","");
 	while(lastSite > 0) {
 		console.log(lastSite);
 		lastSite--;
