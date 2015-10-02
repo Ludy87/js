@@ -4,7 +4,10 @@ function Android () {
 	
 	this.zitate = function() {
 		$(document).ready(function() {
-			$('blockquote').prepend('<p class="spoiler">Spoiler</p>');
+			$('blockquote').before('<p class="spoiler">Spoiler</p>');
+			$( "body" ).delegate( "p.spoiler", "click", function() {
+				$(this).next().toggle();
+			});
 		});
 	};
 	
