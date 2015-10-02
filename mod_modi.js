@@ -165,6 +165,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            									
 		            								})
 		            								.fail(function (data) {
+		            									$(this).dialog("close");
 		            									alert('Thread schon geschlossen!')
 		            								});
 		            						}
