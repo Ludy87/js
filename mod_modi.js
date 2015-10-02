@@ -165,7 +165,7 @@ if (mail == undefined && hostPathLength == 4) {
 		            									
 		            								})
 		            								.fail(function (data) {
-		            									$(".diaclose").dialog("close");
+		            									$("#dialogTry").dialog("close");
 		            									alert('Thread schon geschlossen!')
 		            								});
 		            						}
