@@ -5,6 +5,7 @@ function Android () {
 	this.zitate = function() {
 		$(document).ready(function() {
 			$('blockquote').before('<p class="spoiler">Spoiler</p>');
+			$('blockquote').css('display','none');
 			$( "body" ).delegate( "p.spoiler", "click", function() {
 				$(this).next().slideToggle("slow");
 			});
