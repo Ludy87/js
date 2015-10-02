@@ -209,6 +209,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	});
 } else if(area == "leaderboard" && hostPathLength === 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
+	lastSite = lastSite.replace(".","");
 	while(lastSite > 0) {
 		console.log(lastSite);
 		lastSite--;
