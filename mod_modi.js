@@ -211,7 +211,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
 	var path = (hostSplit[0] + "/" + hostSplit[1] + "/" + hostSplit[2] + "/" + area + "/page/");
-	while(lastSite > 136070) {
+	while(lastSite > "136070") {
 		console.log(path + lastSite);
 		$.get( path + lastSite, function( data ) {
 			console.log($( data ).find('.leaderboardTable div.leaderboard-user'));
