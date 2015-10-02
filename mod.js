@@ -2,6 +2,12 @@ var userS = userSearch;
 var mailT = mailToUrl;
 function Android () {
 	
+	this.zitate = function() {
+		$(document).ready(function() {
+			$('blockquote').prepend('<p class="spoiler">Spoiler</p>');
+		});
+	};
+	
     this.ready = function() {
     	ajax = new XMLHttpRequest();
 	 
