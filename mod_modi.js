@@ -208,8 +208,11 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	    }
 	});
 } else if(area == "leaderboard" && hostPathLength === 4) {
-	console.log($(".pagerNewNext"))
-	console.log($(".pagerNewNext").prev().text());
+	var lastSite = $(".pagerNewNext").prev().text();
+	while(lastSite > 0) {
+		console.log(lastSite);
+		lastSite--;
+	}
 } else if(admin === "admin" && hostPathLength === 7 && mail != "userSearch") {
 	$.getScript(adminUrl);
 	console.log(admin, hostPathLength, host.indexOf('userSearch'))
