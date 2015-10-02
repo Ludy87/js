@@ -124,7 +124,7 @@ if (mail == undefined && hostPathLength == 4) {
 	$("#forumHeadingThread").prepend(image);
 	$("head").append('<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>');
 	$("body").append('<div id="dialog" style="display:none;"><p>Thrad in den Papierkorb verschieben?</p></div>');
-	$("body").append('<div id="dialogTry" style="display:none;"><p><input type="text" class="korbText" /></p></div>');
+	$("body").append('<div id="dialogTry" style="display:none;"><p>Bitte Grund eingeben!</p><p><input type="text" class="korbText" /></p></div>');
 	$("body").append('<div id="dialogError" style="display:none;"><p>mindestens 5 Zeichen!</p></div>');
 	
 	$(document).ready(function() {
