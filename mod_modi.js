@@ -206,6 +206,31 @@ if (mail == undefined && hostPathLength == 4) {
 	 
 	    }
 	});
+} else if(area === "leaderboard") {// && hostPathLength === 4) {
+	console.log($(".pagerNewNext").prev().text());
+} else if(admin === "admin" && hostPathLength === 7 && mail != "userSearch") {
+	$.getScript(adminUrl);
+	console.log(admin, hostPathLength, host.indexOf('userSearch'))
+} else if(mail === "mail-to" && hostPathLength === 8) {
+	$.ajax({
+		url: mailT,
+		type: "GET",
+		contentType: 'text/javascript',
+		cache: false,
+		success: function (data, status, error) {
+			eval(data);
+		}
+	});
+} else if(area == "user") {
+	if($(".httpErrorFooter").text().trim()) {
+		$("body").text("");
+		$("head").after("<body></body>");
+		$("body").load(adminSite + areaUserId)
+	}
+}
+$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
+$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
+if(area === "forum") {
 	$.ajax({
 		url : userS,
 		type: "GET",
@@ -238,28 +263,5 @@ if (mail == undefined && hostPathLength == 4) {
 		
 		}
 	});
-} else if(area === "leaderboard") {// && hostPathLength === 4) {
-	console.log($(".pagerNewNext").prev().text());
-} else if(admin === "admin" && hostPathLength === 7 && mail != "userSearch") {
-	$.getScript(adminUrl);
-	console.log(admin, hostPathLength, host.indexOf('userSearch'))
-} else if(mail === "mail-to" && hostPathLength === 8) {
-	$.ajax({
-		url: mailT,
-		type: "GET",
-		contentType: 'text/javascript',
-		cache: false,
-		success: function (data, status, error) {
-			eval(data);
-		}
-	});
-} else if(area == "user") {
-	if($(".httpErrorFooter").text().trim()) {
-		$("body").text("");
-		$("head").after("<body></body>");
-		$("body").load(adminSite + areaUserId)
-	}
 }
-$(".powerbarLinks").append('<a href="/de/android/admin/userSearch">Usersuche</a>');
-$(".navTopLeft").append('<a href="/de/android/admin/userSearch" class="navTopLeftLink"><span>Usersuche</span></a>');
 console.log(wrapper);
