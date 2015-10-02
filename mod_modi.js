@@ -207,7 +207,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	 
 	    }
 	});
-} else if(area == "leaderboard" && hostPathLength >= 4) {
+} else if(area == "_leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
 	var path = (hostSplit[0] + "/" + hostSplit[1] + "/" + hostSplit[2] + "/" + area + "/page/");
