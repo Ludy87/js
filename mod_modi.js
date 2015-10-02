@@ -264,4 +264,4 @@ if(area === "forum") {
 		}
 	});
 }
-console.log(wrapper);
+console.log(wrapper,area);
