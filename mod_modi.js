@@ -163,6 +163,9 @@ if (mail == undefined && hostPathLength == 4) {
 		            											}
 		            										});
 		            									
+		            								})
+		            								.fail(function (data) {
+		            									alert('Thread schon geschlossen!')
 		            								});
 		            						}
 		            					}
@@ -171,7 +174,6 @@ if (mail == undefined && hostPathLength == 4) {
 						//location.reload();
 					})
 					.fail(function( data ) {
-						alert('Thread schon geschlossen!')
 						console.log(data);
 					});
 		                $(this).dialog("close");
