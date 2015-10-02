@@ -52,3 +52,11 @@
     bottom: 30px;
   }
 }
+.spoiler {
+    background-color: #666;
+    opacity: 0.8;
+    width: auto;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
