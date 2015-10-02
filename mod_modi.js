@@ -1,4 +1,4 @@
-if (mail == undefined && hostPathLength == 4) {
+if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	console.log("!mail")
 	var link = $(".commentContainer header a").each(function(index, value) {
 		if(!$(value).hasClass('commentLink')) {
