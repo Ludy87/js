@@ -1,4 +1,5 @@
 if (mail == undefined && hostPathLength == 4) {
+	console.log("!mail")
 	var link = $(".commentContainer header a").each(function(index, value) {
 		if(!$(value).hasClass('commentLink')) {
 			var linkId = ($(value).attr("href").split("/")[2])
