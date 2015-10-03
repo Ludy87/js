@@ -61,3 +61,8 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.gsc-control-cse .gsc-control-cse-de {
+  background: linear-gradient(135deg,#1f6eb0 67%,#43a8da 100%);
+  border: 0;
+}
