@@ -131,7 +131,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	$(document).ready(function() {
 		var sText = $('script').text();
 		var u = sText.split("userId: ")[1];
-		console.log(AP.req);
+		//console.log(AP.req);
 	//var scri = ($('script')[7]);
 	//console.log(scri,7)
 	//scri = ($(scri).text())
