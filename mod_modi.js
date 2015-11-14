@@ -214,6 +214,12 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				scrollTop: $(window.location.hash).offset().top - 30
 				
 			}, 2000);
+		} else {
+			var aid = $('article').attr('id');
+			$('html, body').animate({
+				scrollTop: $('#'+aid).offset().top - 30
+				
+			}, 2000);
 		}
 	}, 1000);
 } else if(area == "_leaderboard" && hostPathLength >= 4) {
