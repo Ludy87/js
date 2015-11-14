@@ -208,12 +208,14 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	 
 	    }
 	});
-	if(window.location.hash) {
-		$('html, body').animate({
-			scrollTop: $(window.location.hash).offset().top
-			
-		}, 2000);
-	}
+	setTimeout(function(){
+		if(window.location.hash) {
+			$('html, body').animate({
+				scrollTop: $(window.location.hash).offset().top
+				
+			}, 2000);
+		}
+	}, 500);
 } else if(area == "_leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
