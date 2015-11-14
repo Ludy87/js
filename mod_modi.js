@@ -211,7 +211,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	setTimeout(function(){
 		if(window.location.hash) {
 			$('html, body').animate({
-				scrollTop: $(window.location.hash).offset().top
+				scrollTop: $(window.location.hash).offset().top - 30
 				
 			}, 2000);
 		}
