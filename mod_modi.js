@@ -215,7 +215,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				
 			}, 2000);
 		}
-	}, 500);
+	}, 1000);
 } else if(area == "_leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
