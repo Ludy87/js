@@ -208,6 +208,12 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	 
 	    }
 	});
+	if(window.addEventListener) document.addEventListener('DOMMouseScroll', stopScroll, false);
+	document.onmousewheel = stopScroll;
+	
+	function stopScroll() {
+	  $(window)._scrollable().stop(true, false);  // Stops and dequeue's animations
+	}
 	setTimeout(function(){
 		if(window.location.hash) {
 			$('html, body').animate({
