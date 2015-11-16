@@ -208,14 +208,12 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	 
 	    }
 	});
+	$('.windows').bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
+		if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
+		     $('.windows').stop(true,false);
+		}
+	});
 	setTimeout(function(){
-		
-	if(window.addEventListener) document.addEventListener('DOMMouseScroll', stopScroll, false);
-	document.onmousewheel = stopScroll;
-	
-	function stopScroll() {
-	  $(window)._scrollable().stop(true, false);  // Stops and dequeue's animations
-	}
 		if(window.location.hash) {
 			$('html, body').animate({
 				scrollTop: $(window.location.hash).offset().top - 30
