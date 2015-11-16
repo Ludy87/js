@@ -209,9 +209,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	    }
 	});
 	setTimeout(function(){
-	$('.windows').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
+	$('html, body').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
 	    if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel") {
-	        $(".windows").stop();
+	        $("html, body").stop();
 	    }
 	});
 		if(window.location.hash) {
