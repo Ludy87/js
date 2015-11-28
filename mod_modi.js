@@ -121,9 +121,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 		});
 		if(window.location.hash) {
 			console.log(window.location.hash);
+			$(window.location.hash).css({"border" : "1px solid red"})
 			$('html, body').animate({
 				scrollTop: $(window.location.hash).offset().top - 130
-				
 			}, 2000);
 		} 
 	}, 1000);
