@@ -120,6 +120,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 		    }
 		});
 		if(window.location.hash) {
+			console.log(window.location.hash);
 			$('html, body').animate({
 				scrollTop: $(window.location.hash).offset().top - 30
 				
