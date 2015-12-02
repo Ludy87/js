@@ -17,6 +17,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				if(items.wordFilter) {
 					$(document).ready(function() {
 						$(".filter").remove()
+						
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
 							$('body').removeHighlight();
@@ -30,14 +31,14 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 								}
 							});
 							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
+							if($("span").hasClass("highlight")) {
+								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
+							}
 						})
 						.fail(function() {
 							$(".filter").text("Error: Wordfilterdatei ist default");
 							$(".filter").show();
 						});
-						if($("span").hasClass("highlight")) {
-							$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
-						}
 					});
 				}
 				$($header).each(function(i, v) {
