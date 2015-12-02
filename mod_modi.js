@@ -23,8 +23,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$.each(content.split(","), function(i,v) {
 								if (v) {
 									if(!$("span").hasClass(".highlight")) {
-										$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
-					
 										console.log(i + " " + v);
 										var high = ($('body').highlight( v ));
 										$(".filter").show();
@@ -37,6 +35,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$(".filter").text("Error: Wordfilterdatei ist default");
 							$(".filter").show();
 						});
+						if($("span").hasClass(".highlight")) {
+							$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
+						}
 					});
 				}
 				$($header).each(function(i, v) {
