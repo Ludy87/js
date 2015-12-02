@@ -35,7 +35,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
 							
 							if($("span").hasClass("highlight") && !$("div").hasClass("filter")) {
-								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer<li></li></div>")
+								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer<li style="list-style: none;"></li></div>")
 							}
 							
 						})
@@ -43,7 +43,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							if($i==0) {
 								$( "span.highlight" ).each(function( index ) {
 									console.log($(this).parent().attr("id"));
-									$(".filter li").append('<ul id="wcomment" data-id="' + $(this).parent().attr("id") + '">' + $(this).parent().attr("id") + "</ul>");
+									$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">' + $(this).parent().attr("id") + "</ul>");
 								});
 							}
 							$i++;
