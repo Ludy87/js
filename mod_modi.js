@@ -94,7 +94,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	});
 	$("#wcomment").click(function() {
 	    $('html, body').animate({
-	        scrollTop: $($(this).data("id")).offset().top
+	        scrollTop: $("#" + $(this).data("id")).offset().top
 	    }, 2000);
 	});
 	$( "body" ).delegate( "button.replyForm", "click", function() {
