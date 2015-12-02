@@ -37,6 +37,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
 							}
 							
+						})
+						.done(function() {
+							alert( "second success" );
 							$( "span.highlight" ).each(function( index ) {
 								console.log( index + ": " + $i + " " + $( this ).text() );
 							});
