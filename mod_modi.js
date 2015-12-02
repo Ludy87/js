@@ -19,9 +19,9 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						$(".filter").remove()
 						
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
+							$i = 0;
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
 							$('body').removeHighlight();
-							$i = 0;
 							$.each(content.split(","), function(i,v) {
 								if (v) {
 									if(!$("span").hasClass("highlight")) {
@@ -37,13 +37,13 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer</div>")
 							}
 							
+							$( "span.highlight" ).each(function( index ) {
+								console.log( index + ": " + $i + " " + $( this ).text() );
+							});
 						})
 						.fail(function() {
 							$(".filter").text("Error: Wordfilterdatei ist default");
 							$(".filter").show();
-						});
-						$( "span.highlight" ).each(function( index ) {
-							console.log( index + ": " + $( this ).text() );
 						});
 					});
 				}
