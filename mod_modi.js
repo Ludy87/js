@@ -26,8 +26,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 									console.log(i + " " + v);
 									if(!$("span").hasClass(".highlight")) {
 										var high = ($('body').highlight( v ));
+										$(".filter").show();
 									}
-									$(".filter").show();
 								}
 							});
 							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
