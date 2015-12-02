@@ -93,6 +93,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 		return true;
 	});
 	$("#wcomment").click(function() {
+		console.log($(this).data("id"));
 	    $('html, body').animate({
 	        scrollTop: $("#" + $(this).data("id")).offset().top
 	    }, 2000);
