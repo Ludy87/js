@@ -43,7 +43,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							if($i==0) {
 								$( "span.highlight" ).each(function( index ) {
 									console.log($(this).parent().attr("id"));
-									$(".filter li").append("<ul>" + $(this).parent().attr("id") + "</ul>");
+									$(".filter li").append('<ul id="wcomment" data-id="' + $(this).parent().attr("id") + '">' + $(this).parent().attr("id") + "</ul>");
 								});
 							}
 							$i++;
@@ -91,6 +91,11 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 		var text = $(this).data("text");
 		$("div.siteload").remove();
 		return true;
+	});
+	$("#wcomment").click(function() {
+	    $('html, body').animate({
+	        scrollTop: $($(this).data("id")).offset().top
+	    }, 2000);
 	});
 	$( "body" ).delegate( "button.replyForm", "click", function() {
 		if($(this).text().trim() == "Antworten") {
