@@ -26,7 +26,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$.each(content.split(","), function(i,v) {
 								if (v) {
 									if(!$("span").hasClass("highlight")) {
-										console.log(i + " " + v);
+										//console.log(i + " " + v);
 										var high = ($('body').highlight( v ));
 										$(".filter").show();
 									}
@@ -42,7 +42,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						.done(function() {
 							if($i==0) {
 								$( "span.highlight" ).each(function( index ) {
-									console.log( index + ": " + $i + " " + $( this ).text() );
+									$( this ).attr("id", "marker" + index);
 								});
 							}
 							$i++;
