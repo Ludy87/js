@@ -92,11 +92,11 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 		$("div.siteload").remove();
 		return true;
 	});
-	$("#wcomment").click(function() {
+	$( "body" ).delegate("ul#wcomment","click",function() {
 		console.log($(this).data("id"));
-	    $('html, body').animate({
-	        scrollTop: $("#" + $(this).data("id")).offset().top
-	    }, 2000);
+		$('html, body').animate({
+			scrollTop: $("#" + $(this).data("id")).offset().top
+		}, 2000);
 	});
 	$( "body" ).delegate( "button.replyForm", "click", function() {
 		if($(this).text().trim() == "Antworten") {
