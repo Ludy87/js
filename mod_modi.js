@@ -4,6 +4,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 		if(!$(value).hasClass('commentLink')) {
 			var linkId = ($(value).attr("href").split("/")[2])
 			var $header = $(this).parent();
+				$i = 0;
 			myThis.chrome.storage.sync.get({
 				adminSiteVisable: false,
 				mailToVisable: false,
@@ -19,7 +20,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						$(".filter").remove()
 						
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
-							$i = 0;
+						
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
 							$('body').removeHighlight();
 							$.each(content.split(","), function(i,v) {
