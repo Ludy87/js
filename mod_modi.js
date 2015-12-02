@@ -44,7 +44,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 								$( "span.highlight" ).each(function( index ) {
 									console.log($(this).parent().attr("id"));
 									if(undefined != $(this).parent().attr("id")) {
-										$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">' + $(this).parent().attr("id") + "</ul>");
+										$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">' + $(this).text() + "</ul>");
 									}
 								});
 							}
