@@ -42,7 +42,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						.done(function() {
 							if($i==0) {
 								$( "span.highlight" ).each(function( index ) {
-									$idx = ("marker" + index);
+									console.log($(this).parent());
 									$( this ).attr("id", $idx);
 								});
 							}
