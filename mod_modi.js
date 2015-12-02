@@ -25,11 +25,11 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$('body').removeHighlight();
 							$.each(content.split(","), function(i,v) {
 								if (v) {
-									if(!$("span").hasClass("highlight")) {
+									//if(!$("span").hasClass("highlight")) {
 										//console.log(i + " " + v);
 										var high = ($('body').highlight( v ));
 										$(".filter").show();
-									}
+									//}
 								}
 							});
 							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
