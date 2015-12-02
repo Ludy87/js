@@ -39,7 +39,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							
 						})
 						.done(function() {
-							alert( "second success" );
 							$( "span.highlight" ).each(function( index ) {
 								console.log( index + ": " + $i + " " + $( this ).text() );
 							});
