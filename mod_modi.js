@@ -43,6 +43,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$( "span.highlight" ).each(function( index ) {
 								console.log( index + ": " + $i + " " + $( this ).text() );
 							});
+							$i++;
 						})
 						.fail(function() {
 							$(".filter").text("Error: Wordfilterdatei ist default");
