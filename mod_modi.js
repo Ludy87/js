@@ -40,9 +40,11 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							
 						})
 						.done(function() {
-							$( "span.highlight" ).each(function( index ) {
-								console.log( index + ": " + $i + " " + $( this ).text() );
-							});
+							if($i==0) {
+								$( "span.highlight" ).each(function( index ) {
+									console.log( index + ": " + $i + " " + $( this ).text() );
+								});
+							}
 							$i++;
 						})
 						.fail(function() {
