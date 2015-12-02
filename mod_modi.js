@@ -23,8 +23,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$('body').removeHighlight();
 							$.each(content.split(","), function(i,v) {
 								if (v) {
-									console.log(i + " " + v);
 									if(!$("span").hasClass(".highlight")) {
+										console.log(i + " " + v);
 										var high = ($('body').highlight( v ));
 										$(".filter").show();
 									}
