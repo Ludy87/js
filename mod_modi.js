@@ -35,7 +35,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
 							
 							if($("span").hasClass("highlight") && !$("div").hasClass("filter")) {
-								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer<li style="list-style: none;"></li></div>")
+								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 50%; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer<li style=\"list-style: none;\"></li></div>")
 							}
 							
 						})
