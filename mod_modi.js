@@ -18,7 +18,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				if(items.wordFilter) {
 					$(document).ready(function() {
 						$(".filter").remove()
-						
+						try {
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
 						chrome.storage.local.get("wordFilter", function(result) {
 							$('body').removeHighlight();
@@ -44,7 +44,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							}
 							$i++;
 						});
-						/**$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
+						} catch(err) {
+						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
 							$('body').removeHighlight();
 							$.each(content.split(","), function(i,v) {
 								if (v) {
@@ -76,7 +77,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						.fail(function() {
 							$(".filter").text("Error: Wordfilterdatei ist default");
 							$(".filter").show();
-						});**/
+						});
+						}
 					});
 				}
 				$($header).each(function(i, v) {
