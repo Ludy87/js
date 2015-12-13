@@ -73,7 +73,7 @@ function Android () {
     };
     
     this.top = function() {
-				    	$( document ).ready(function() {
+	$( document ).ready(function() {
     	$('.forumThreadListPageLabelFixed, .instantScrollAnchor, .forumThreadListPageLabelFixedInside').remove();
 	$("body").append('<a href="#0" class="cd-top" style="border-radius: 50px; z-index: 100; left: 50%;">Top</a>');
 	var offset = 35, //300
@@ -99,7 +99,8 @@ function Android () {
 	    url: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css',
 	    dataType: 'text',
 	    success: function(data) {
-	        $('<style type="text/css">\n' + data + '</style>').appendTo("head");                    
+	        $('<style type="text/css">\n' + data + '</style>').appendTo("head");     
+	        $('.gsc-control-cse.gsc-control-cse-de').css("background", "linear-gradient(135deg,#1f6eb0 67%,#43a8da 100%) !important");
 	    }                  
 	});})
     };
