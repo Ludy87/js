@@ -21,7 +21,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
 						(chrome.storage.local.get("wordFilter"), function() {
 							if (chrome.runtime.lastError) {
-								return;
+								console.log("ERROR");
 							}
 						});
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
