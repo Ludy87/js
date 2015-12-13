@@ -18,33 +18,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				if(items.wordFilter) {
 					$(document).ready(function() {
 						$(".filter").remove()
-						try {
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
-						chrome.storage.local.get("wordFilter", function(result) {
-							$('body').removeHighlight();
-							var t = result['wordFilter'];
-							$.each(t, function(i,v) {
-								if(v) {
-									var high = ($('body').highlight( v ));
-									$(".filter").show();
-								}
-							});
-							$(".highlight").css({"background-color": items.wordFilterColor, "color": items.wordFilterColorText});
-							
-							if($("span").hasClass("highlight") && !$("div").hasClass("filter")) {
-								$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; background-color: red; padding: 10px; bottom: 0; color: white; font-size: 1.2em; display: none;\">Wordfiltertreffer<li style=\"list-style: none;\"></li></div>")
-							}
-							if($i==0) {
-								$( "span.highlight" ).each(function( index ) {
-									console.log($(this).parent().attr("id"));
-									if(undefined != $(this).parent().attr("id")) {
-										$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">Treffer ' + (index+1) + "</ul>");
-									}
-								});
-							}
-							$i++;
-						});
-						} catch(err) {
+						
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
 							$('body').removeHighlight();
 							$.each(content.split(","), function(i,v) {
@@ -78,7 +53,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$(".filter").text("Error: Wordfilterdatei ist default");
 							$(".filter").show();
 						});
-						}
 					});
 				}
 				$($header).each(function(i, v) {
