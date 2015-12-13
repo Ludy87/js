@@ -24,7 +24,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$('body').removeHighlight();
 							var t = result['wordFilter'];
 							$.each(t, function(i,v) {
-								console.log(this);
+								console.log(v);
 							});
 						});
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
