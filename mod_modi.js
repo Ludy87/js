@@ -19,7 +19,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 					$(document).ready(function() {
 						$(".filter").remove()
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
-						
+						console.log(chrome.storage.local.get("wordFilter"));
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
 							$('body').removeHighlight();
 							$.each(content.split(","), function(i,v) {
