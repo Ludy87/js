@@ -14,7 +14,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				wordFilterColor: "#FFF34D",
 				wordFilterColorText: "#FFFFFF"
 			}, function(items) {
-				console.log(items.wordFilter)
+				//console.log(items.wordFilter)
 				if(items.wordFilter) {
 					$(document).ready(function() {
 						$(".filter").remove()
@@ -23,7 +23,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						chrome.storage.local.get("wordFilter", function(result) {
 							$('body').removeHighlight();
 							$.each(result['wordFilter'].split(","), function(i,v) {
-								console.log(v);
+								console.log(result['wordFilter'].split(","));
+								console.log(this);
 							});
 						});
 						$.get(chrome.extension.getURL("/wortfilter.txt"), function(content) {
