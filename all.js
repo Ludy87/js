@@ -36,7 +36,7 @@ function OverSite () {
 			);
 		});
 		$.ajax({
-			url: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css',
+			url: 'https://raw.githubusercontent.com/Ludy87/js/master/backToTop.css?v=' + v,
 			dataType: 'text',
 			success: function(data) {
 				$('<style type="text/css">\n' + data + '</style>').appendTo("head");                    
