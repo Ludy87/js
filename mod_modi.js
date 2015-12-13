@@ -22,7 +22,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
 						chrome.storage.local.get("wordFilter", function(result) {
 							$('body').removeHighlight();
-							$.each(result['wordFilter'].split(","), function(i,v) {
+							var t = result['wordFilter'];
+							$.each(t.split(","), function(i,v) {
 								console.log(result['wordFilter'].split(","));
 								console.log(this);
 							});
