@@ -100,7 +100,7 @@ function Android () {
 	    dataType: 'text',
 	    success: function(data) {
 	        $('<style type="text/css">\n' + data + '</style>').appendTo("head");     
-	        $('.gsc-control-cse.gsc-control-cse-de').attr("style", "background: linear-gradient(135deg,#1f6eb0 67%,#43a8da 100%) !important;");
+	        //$('.gsc-control-cse.gsc-control-cse-de').attr("style", "background: linear-gradient(135deg,#1f6eb0 67%,#43a8da 100%) !important;");
 	    }                  
 	});})
     };
