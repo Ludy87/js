@@ -24,7 +24,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 							$('body').removeHighlight();
 							var t = result['wordFilter'];
 							$.each(t.split(","), function(i,v) {
-								console.log(result['wordFilter'].split(","));
 								console.log(this);
 							});
 						});
