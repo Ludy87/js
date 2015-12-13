@@ -23,7 +23,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						chrome.storage.local.get("wordFilter", function(result) {
 							$('body').removeHighlight();
 							var t = result['wordFilter'];
-							$.each(t.split(","), function(i,v) {
+							$.each(t, function(i,v) {
 								console.log(this);
 							});
 						});
