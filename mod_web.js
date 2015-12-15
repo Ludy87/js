@@ -126,6 +126,12 @@ function Android () {
 				if(userId == "4361215" || userId == "2927890") {
 					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 				}
+				if(userId == "474375") {
+					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DIRTY UNICORNS");
+				}
+				if(userId == "429327") {
+					$(this).find(".threadPostAuthorName .user-badges span").first().append(" THE BOT");
+				}
 				var thisC = this;
 				$.get(adminSite + userId, function(my_var) {
 					var tab = $(my_var).find("section table")[1];
