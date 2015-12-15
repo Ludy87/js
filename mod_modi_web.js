@@ -22,6 +22,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						chrome.storage.local.get("wordFilter", function(result) {
                                                 	$('body').removeHighlight();
                                                 	var t = result['wordFilter'];
+                                                	console.log(t);
                                                 	$.each(t, function(i,v) {
                                                 		if(v) {
                                                 			var high = ($('body').highlight( v ));
