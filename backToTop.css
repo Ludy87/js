@@ -57,7 +57,7 @@
   opacity: 0.8;
   width: auto;
   text-align: center;
-  color: grey;
+  color: grey !important;
   border-radius: 5px;
   cursor: pointer;
 }
