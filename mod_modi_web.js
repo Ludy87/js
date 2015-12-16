@@ -20,12 +20,12 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						$(".filter").remove()
 						//var app = "chrome-extension://ihngcbdenildjnpeheelhodmnnfgfmnl";
 						chrome.storage.local.get("wordFilter", function(result) {
-                                                	$('body').removeHighlight();
+                                                	$('.articleComments').removeHighlight();
                                                 	var t = result['wordFilter'];
                                                 	if(t != undefined) {
 	                                                	$.each(t, function(i,v) {
 	                                                		if(v) {
-	                                                			var high = ($('body').highlight( v ));
+	                                                			var high = ($('.articleComments').highlight( v ));
 	                                                			$(".filter").show();
 	                                                		}
 	                                                	});
