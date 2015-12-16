@@ -96,13 +96,14 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 			var commentId = $(this).data("reply");
 			console.log($(this).parent().parent().parent().find("header a").first().text());
 			$("li#comment" + commentId.commentId + " .replyFormDiv").append("<div class=\"siteload\"><ul class=\"myMenu\"></ul><div style=\"clear:both;\"></div></div>");
-				myThis.chrome.storage.local.get(null, function(items) {
-					var allKeys = Object.keys(items);
+				myThis.chrome.storage.local.get("text", function(items) {
+					var allKeys = Object.keys(items["text"]);
+					console.log(items["text"]);
 					var zahl = $("a.schreib").length;
 					$.each($("a.schreib"), function(i,v) {
 						console.log(i + " : " + zahl)
 					})
-					$.each(items, function(index, value) {
+					$.each(items["text"], function(index, value) {
 						if(value != "" && index != "" ) {
 							if($(".schreib").text() != index) {
 								var myvar = '<li><a href="#" style="padding: 2px;" class="schreib btn-primary-small padding-y-small" data-text="' + value + '">' + decodeURIComponent(index) + '</a></li>';
