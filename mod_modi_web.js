@@ -36,8 +36,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	                                                	}
 	                                                	if($i==0) {
 	                                                		$( "span.highlight" ).each(function( index ) {
-	                                                			console.log($(this).parent().attr("id"));
 	                                                			if(undefined != $(this).parent().attr("id")) {
+	                                                				console.log($(this).parent().attr("id"));
 	                                                				$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">Treffer ' + (index+1) + "</ul>");
 	                                                			}
 	                                                		});
