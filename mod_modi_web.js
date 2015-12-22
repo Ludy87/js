@@ -23,8 +23,8 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 	$('.articleComments').removeHighlight();
                                                 	var t = result['wordFilter'];
                                                 	if(t != undefined) {
+	                                                		console.log(t)
 	                                                	$.each(t, function(i,v) {
-	                                                		console.log(i)
 	                                                		if(v) {
 	                                                			var high = ($('.articleComments').highlight( v ));
 	                                                			$(".filter").show();
