@@ -35,12 +35,17 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	                                                		$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; padding: 10px; bottom: 0px; color: white; font-size: 1.2em; overflow: auto; width: 100px;background-color: rgba(255,0,0,0.9);max-height: 200px;\">Wortfiltertreffer aktiv<li style=\"list-style: none;\"></li></div>")
 	                                                	}
 	                                                	if($i==0) {
+	                                                		var i = 0;
 	                                                		$( "span.highlight" ).each(function( index ) {
+	                                                			if(i == 20) {
+	                                                				return;
+	                                                			}
 	                                                			if(undefined != $(this).parent().attr("id")) {
 	                                                				console.log($(this).parent().attr("id"));
 	                                                				$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">Treffer ' + (index+1) + "</ul>");
 	                                                				$(".filter").show();
 	                                                			}
+	                                                			i++;
 	                                                		});
 	                                                	}
 	                                                	$i++;
