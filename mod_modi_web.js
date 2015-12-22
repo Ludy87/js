@@ -1,10 +1,6 @@
 if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	console.log("!mail")
 	var link = $(".commentContainer header a").each(function(index, value) {
-		if(index == 50) {
-			return false;
-		}
-		console.log(index)
 		if(!$(value).hasClass('commentLink')) {
 			var linkId = ($(value).attr("href").split("/")[2])
 			var $header = $(this).parent();
