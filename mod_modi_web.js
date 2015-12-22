@@ -50,7 +50,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 });
 					});
 				}
-				console.log(admin)
 				$($header).each(function(i, v) {
 					var t = $(v).find("a");
 					$.get(mailTo + linkId, function() {
@@ -78,6 +77,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 					});
 				});
 			});
+				console.log(admin)
 		}
 	});
 	function writeText(text, position){
