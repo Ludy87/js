@@ -5,7 +5,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 			var linkId = ($(value).attr("href").split("/")[2])
 			var $header = $(this).parent();
 				$i = 0;
-			var admin;
 			myThis.chrome.storage.sync.get({
 				adminSiteVisable: false,
 				mailToVisable: false,
@@ -77,7 +76,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 					});
 				});
 			});
-				console.log(admin)
 		}
 	});
 	function writeText(text, position){
