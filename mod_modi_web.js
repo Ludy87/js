@@ -53,7 +53,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 });
 					});
 				}
-				$($header).each(function(i, v) {
+				/**$($header).each(function(i, v) {
 					var t = $(v).find("a");
 					$.get(mailTo + linkId, function() {
 					})
@@ -78,7 +78,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 					.fail(function() {
 						$header.after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px; background-color: red; cursor: default;">Gelöschter Account</a>')
 					});
-				});
+				});**/
 			});
 		}
 	});
