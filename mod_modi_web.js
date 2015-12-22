@@ -5,6 +5,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 			var linkId = ($(value).attr("href").split("/")[2])
 			var $header = $(this).parent();
 				$i = 0;
+			var admin;
 			myThis.chrome.storage.sync.get({
 				adminSiteVisable: false,
 				mailToVisable: false,
@@ -14,6 +15,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 				wordFilterColor: "#FFF34D",
 				wordFilterColorText: "#FFFFFF"
 			}, function(items) {
+				admin = items.adminSiteVisable;
 				//console.log(items.wordFilter)
 				if(items.wordFilter) {
 					$(document).ready(function() {
@@ -23,7 +25,6 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 	$('.articleComments').removeHighlight();
                                                 	var t = result['wordFilter'];
                                                 	if(t != undefined) {
-	                                                		console.log(t)
 	                                                	$.each(t, function(i,v) {
 	                                                		if(v) {
 	                                                			var high = ($('.articleComments').highlight( v ));
@@ -49,6 +50,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 });
 					});
 				}
+				console.log(admin)
 				$($header).each(function(i, v) {
 					var t = $(v).find("a");
 					$.get(mailTo + linkId, function() {
