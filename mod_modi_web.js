@@ -24,6 +24,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 	var t = result['wordFilter'];
                                                 	if(t != undefined) {
 	                                                	$.each(t, function(i,v) {
+	                                                		console.log(i)
 	                                                		if(v) {
 	                                                			var high = ($('.articleComments').highlight( v ));
 	                                                			$(".filter").show();
@@ -35,17 +36,12 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	                                                		$("body").prepend("<div class=\"filter\" style=\"position: fixed; z-index: 10000; padding: 10px; bottom: 0px; color: white; font-size: 1.2em; overflow: auto; width: 100px;background-color: rgba(255,0,0,0.9);max-height: 200px;\">Wortfiltertreffer aktiv<li style=\"list-style: none;\"></li></div>")
 	                                                	}
 	                                                	if($i==0) {
-	                                                		var ii = 0;
 	                                                		$( "span.highlight" ).each(function( index ) {
-	                                                			if(ii == 20) {
-	                                                				return;
-	                                                			}
 	                                                			if(undefined != $(this).parent().attr("id")) {
 	                                                				console.log($(this).parent().attr("id"));
 	                                                				$(".filter li").append('<ul style="text-decoration: underline; cursor: pointer;" id="wcomment" data-id="' + $(this).parent().attr("id") + '">Treffer ' + (index+1) + "</ul>");
 	                                                				$(".filter").show();
 	                                                			}
-	                                                			ii++;
 	                                                		});
 	                                                	}
 	                                                	$i++;
@@ -53,7 +49,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
                                                 });
 					});
 				}
-				/**$($header).each(function(i, v) {
+				$($header).each(function(i, v) {
 					var t = $(v).find("a");
 					$.get(mailTo + linkId, function() {
 					})
@@ -78,7 +74,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 					.fail(function() {
 						$header.after('<a class="btn-primary-small padding-y-small" style="margin-left: 1px; background-color: red; cursor: default;">Gelöschter Account</a>')
 					});
-				});**/
+				});
 			});
 		}
 	});
