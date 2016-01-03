@@ -241,11 +241,11 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	    }
 	});
 	setTimeout(function(){
-	$('html, body').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
-	    if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel") {
-	        $("html, body").stop();
-	    }
-	});
+		$('html, body').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
+		    if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel") {
+		        $("html, body").stop();
+		    }
+		});
 		if(window.location.hash) {
 			$('html, body').animate({
 				scrollTop: $(window.location.hash).offset().top - 30
