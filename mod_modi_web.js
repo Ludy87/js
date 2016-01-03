@@ -124,7 +124,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 						//$(this).data("text");
 						text += decodeURIComponent($(this).data("text"));
 						text = text.replace('%ModName%' ,modName).replace('%Name%' ,name).replace('%te%' ,nameTE)
-						setTimeout(writeText(text,commentId.commentId), 500);
+						//setTimeout(writeText(text,commentId.commentId), 500);
 						
 						return false;
 					});
