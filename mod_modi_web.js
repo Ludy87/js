@@ -240,6 +240,10 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	 
 	    }
 	});
+	chrome.storage.sync.get({
+		scrollToPost: false
+	}, function(items) {
+		console.log(items.scrollToPost)
 	setTimeout(function(){
 		$('html, body').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
 		    if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel") {
@@ -260,6 +264,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 			}
 		}
 	}, 1000);
+	});
 } else if(area == "_leaderboard" && hostPathLength >= 4) {
 	var lastSite = $(".pagerNewNext").prev().text();
 	lastSite = lastSite.replace(".","");
