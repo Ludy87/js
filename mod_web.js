@@ -133,7 +133,7 @@ function Android () {
 					$(this).find(".threadPostAuthorName .user-badges span").first().append(" THE BOT");
 				}
 				if(userId == "517270") {
-					$(this).find(".threadPostAuthorName .user-badges span").first().append(" biba bimo");
+					$(this).find(".threadPostAuthorName .user-badges span").first().append(" OPA");
 				}
 				var thisC = this;
 				$.get(adminSite + userId, function(my_var) {
