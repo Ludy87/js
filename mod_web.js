@@ -132,6 +132,9 @@ function Android () {
 				if(userId == "429327") {
 					$(this).find(".threadPostAuthorName .user-badges span").first().append(" THE BOT");
 				}
+				if(userId == "517270") {
+					$(this).find(".threadPostAuthorName .user-badges span").first().append(" biba bimo");
+				}
 				var thisC = this;
 				$.get(adminSite + userId, function(my_var) {
 					var tab = $(my_var).find("section table")[1];
