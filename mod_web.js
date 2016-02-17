@@ -123,6 +123,9 @@ function Android () {
 			var userId = ($(v).find(".threadPostAuthorNameLink").attr("href").split("/")[2]);
 			var userImageLink = ($(v).find(".threadPostAuthorImage img").attr("src").split("/")[2]);
 			if(userId != "android") {
+				if(userId == "413762") {
+					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DER KOPF");
+				}
 				if(userId == "4361215" || userId == "2927890") {
 					$(this).find(".threadPostAuthorName .user-badges span").first().append(" DEV");
 				}
