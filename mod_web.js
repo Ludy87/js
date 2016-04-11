@@ -53,7 +53,7 @@ function Android () {
     
     this.getInfo = function() {
         this.chrome();
-        this.zitate();
+        //this.zitate();
         this.top();
         this.powerBar();
         $.ajax({
