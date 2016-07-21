@@ -14,7 +14,8 @@ function Android () {
 	};
 	
 	this.magazinButtonFix = function() {
-		$('.btn-secondary').css('min-width','0');	
+		$('.btn-secondary').css('min-width','0');
+		$('.btn-secondary').css('font-size', '1.4rem');
 	};
 	
 	this.zitate = function() {
