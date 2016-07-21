@@ -2,6 +2,17 @@ var userS = userSearch;
 var mailT = mailToUrl;
 function Android () {
 	
+	this.signaturFix = function() {
+		// Fix Signatur Size 
+		console.log("Fix Signatur");
+		$('.threadPostContentSignature>p').css('font-size', '1.0rem');
+		$('.threadPostContentSignature>p').css('line-height', '1.0rem');
+		// Fix Signatur Size
+		$('p.threadPostContentModified').css('font-size', '1.0rem');
+		$('p.threadPostContentModified').css('line-height', '1.0rem');
+		//
+	}
+	
 	this.zitate = function() {
 		$('blockquote').before('<p class="spoiler">Spoiler</p>');
 		$('blockquote').css('display','none');
