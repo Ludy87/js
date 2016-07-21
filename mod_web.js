@@ -13,6 +13,10 @@ function Android () {
 		//
 	};
 	
+	this.magazinButtonFix = function() {
+		$('.btn-secondary').css('min-width','0');	
+	};
+	
 	this.zitate = function() {
 		$('blockquote').before('<p class="spoiler">Spoiler</p>');
 		$('blockquote').css('display','none');
@@ -66,6 +70,7 @@ function Android () {
         this.chrome();
         //this.zitate();
         this.signaturFix();
+        this.magazinButtonFix();
         this.top();
         this.powerBar();
         $.ajax({
