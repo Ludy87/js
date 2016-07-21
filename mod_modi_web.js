@@ -153,7 +153,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	});
 } else if(area == "forum" && hostPathLength >= 6) {
 	console.log("Moderatoren-Forum");
-	$('.threadPostContentSignature>p').css({font-size: "1.0rem"});
+	$('.threadPostContentSignature>p').css('font-size, 1.0rem');
 	$('.threadPostContentSignature>p').css({line-height: "1.0rem"});
 	$('.threadPostContentModified>p').css({font-size: "1.0rem"});
 	$('.threadPostContentModified>p').css({line-height: "1.0rem"});
