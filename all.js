@@ -12,6 +12,7 @@ function OverSite () {
 	}
 	$.fn.site.signaturFix = function() {
 		//.threadPostContentSignature>p, .threadPostContentModified>p
+		Console.log("Signatur");
 	    	$('.threadPostContentSignature>p, .threadPostContentModified>p').css('font-size', '1.0rem');
 	    	$('.threadPostContentSignature>p, .threadPostContentModified>p').css('line-height', '1.0rem');
 	}
