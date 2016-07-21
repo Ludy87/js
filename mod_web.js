@@ -65,6 +65,7 @@ function Android () {
     this.getInfo = function() {
         this.chrome();
         //this.zitate();
+        this.signaturFix();
         this.top();
         this.powerBar();
         $.ajax({
