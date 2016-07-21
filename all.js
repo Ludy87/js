@@ -1,5 +1,6 @@
 function OverSite () {
 	this.powerBarFix = function() {
+		console.log("powerbarfix");
 		$('.headerMain, .headerMain-forum').css('margin-top', '30px');
 	    	$('.powerbarContainer').css('position', 'fixed').css('margin-top', '-30px').css('z-index', '100').css('width', '100%');
 	}	
