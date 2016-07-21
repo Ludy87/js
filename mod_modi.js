@@ -150,7 +150,15 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 			}, 2000);
 		} 
 	}, 3500);
-} else if(area == "forum" && hostPathLength >= 6) {
+} else if(area == "forum" && hostPathLength >= 6) {	
+	// Fix Signatur Size 
+	console.log("Fix Signatur");
+	$('.threadPostContentSignature>p').css('font-size', '1.0rem');
+	$('.threadPostContentSignature>p').css('line-height', '1.0rem');
+	// Fix Signatur Size
+	$('p.threadPostContentModified').css('font-size', '1.0rem');
+	$('p.threadPostContentModified').css('line-height', '1.0rem');
+	//
 	var base64_string = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADxPgR5AAAASFBMVEWampr///+ZmZmVlZX4+Pi4uLjs7Ozj4+OSkpLGxsbq6uqioqK0tLT8/Pz39/eoqKjx8fG9vb3c3NzT09ONjY3Nzc3X19ekpKQiGSlbAAACBElEQVRoge2Yi3KrIBBAYQFBEcQ2rf//p13ARq23qXOBTGe6xzyISTisvGWMIAiCIAiCIIhfBzCALZ2frY13Cew/tNM9IaijEkBkDB4AT9DD2N8Zn+ATveQZx53sRX3DMQiwHXfBe3x473hn4fTr0qjx/7GuMgJs4G92iiz2jQcLe84F/A8fiNT71gxhCby/oRiPW8/DchAKUd6IYXofuj2Oe41veHII3B2/e59MaYhgB37E8QcMtrSnwIRNY+d4qOPcT8VVOPnHiq/C0n4CE1bUZXiYigcfiGPYZaDCQABg7WKvsNjU78s7/stwje4l9tfSnogZdFebTJd0pREKFn7oC5uwypQM30Z4KkdXZXq8C8OgdchJickhTVPOBay9UF/ouFTMslmmtLbMWp1CdDOsp2tHKBWAUfky6tgcdXI7ZZgYWwg9rieEkqsQ0Ws5RDOhSEK3Rsg+I8Q5sIlQpgi3S7pGSEISkpCEJCQhCf+KsM2aRqY1zb+E0ChCtV+13YWy2SWNqzazCdm2aoPW61J3vqS+mdCtQsaaNxo/GnFbc9aAu+ss9Aq35A0ixMp6VUq95lbazUrNuRzx9Px5uoYQvt8f7knG1hvSk7KrccsY9+z6ms7xQZTv8BFsmteIY1EFITCzu+n8iNHUuE0TcxA/Y+LLWsDyEAmCIAiCIAiCIH4bH4xGJkBZuFIHAAAAAElFTkSuQmCC";
 	var image = $("<img>", {
 	  "src": base64_string,
