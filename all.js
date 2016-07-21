@@ -8,13 +8,6 @@ function OverSite () {
 	$.fn.site = function() {
 		$.fn.site.top();
 		$.fn.site.powerBarFix();
-		$.fn.site.signaturFix();
-	}
-	$.fn.site.signaturFix = function() {
-		//.threadPostContentSignature>p, .threadPostContentModified>p
-		Console.log("Signatur");
-	    	$('.threadPostContentSignature>p, .threadPostContentModified>p').css('font-size', '1.0rem');
-	    	$('.threadPostContentSignature>p, .threadPostContentModified>p').css('line-height', '1.0rem');
 	}
 	$.fn.site.powerBarFix = function() {
 	    	$('.headerMain, .headerMain-forum').css('margin-top', '30px');
