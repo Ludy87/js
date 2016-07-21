@@ -159,6 +159,7 @@ if (mail == undefined && hostPathLength == 4 && area !== "leaderboard") {
 	// Fix Signatur Size
 	$('p.threadPostContentModified').css('font-size', '1.0rem');
 	var modiText = $('p.threadPostContentModified').text();
+	$('p.threadPostContentModified').text(modiText + ' mit Plugin modifiziert');
 	console.log(modiText);
 	// 
 	
