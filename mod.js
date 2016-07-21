@@ -56,7 +56,6 @@ function Android () {
         //this.zitate();
         this.top();
         this.powerBar();
-        this.signaturFix();
         $.ajax({
 		url: mod_modi_url,
 		type: "GET",
@@ -66,13 +65,6 @@ function Android () {
 			eval(data);
 		}
 	});
-    };
-    
-    this.signaturFix = function() {
-	//.threadPostContentSignature>p, .threadPostContentModified>p
-	Console.log("Signatur");
-	$('.threadPostContentSignature>p, .threadPostContentModified>p').css('font-size', '1.0rem');
-	$('.threadPostContentSignature>p, .threadPostContentModified>p').css('line-height', '1.0rem');
     };
     
     this.powerBar = function() {
