@@ -8,8 +8,8 @@ function Android () {
 		$('.threadPostContentSignature>p').css('font-size', '1.0rem');
 		$('.threadPostContentSignature>p').css('line-height', '1.0rem');
 		// Fix Signatur Size
-		$('p.threadPostContentModified').css('font-size', '1.0rem');
-		$('p.threadPostContentModified').css('line-height', '1.0rem');
+		//$('p.threadPostContentModified').css('font-size', '1.0rem');
+		//$('p.threadPostContentModified').css('line-height', '1.0rem');
 		//
 	};
 	
